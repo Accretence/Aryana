@@ -1,24 +1,34 @@
 const fs = require('fs-extra')
 const path = require('path')
-const componentsPath = path.join(__dirname)
+const componentsPath = path.join(__dirname, '../src')
 
 module.exports = async () => {
   const files = await fs.readdir(componentsPath)
 
-  const components = await Promise.all(
-    files.map(async name => {
-      const comPath = path.join(componentsPath, name)
-      const entry = path.join(comPath, 'index.js')
+  async function fetchComponents() {
+    let res = []
+
+    for (let i = 0; i < files.length; i++) {
+      const comPath = path.join(componentsPath, files[i])
+
+      console.log(files[i])
 
       const stat = await fs.stat(comPath)
-      if (!stat.isDirectory()) return null
+      if (!stat.isDirectory()) break
+
+      const entry = path.join(comPath, 'index.js')
 
       const hasFile = await fs.pathExists(entry)
-      if (!hasFile) return null
+      if (!hasFile) break
 
-      return { name, url: entry }
-    }),
-  )
+      res.push({ name: files[i], url: entry })
+    }
+
+    return res
+  }
+
+  const components = await fetchComponents()
+  console.log(components)
 
   const componentsEntries = components
     .filter(r => r)
@@ -33,9 +43,7 @@ module.exports = async () => {
 
   const configs = {
     mode: 'none',
-
     entry: componentsEntries,
-
     output: {
       filename: '[name].js',
       path: path.resolve(__dirname, '../dist'),
@@ -81,11 +89,10 @@ module.exports = async () => {
     module: {
       rules: [
         {
-          test: /\.tsx?$/,
-          exclude: /(node_modules)/,
+          test: /\.js?$/,
+          exclude: /node_modules/,
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/env', '@babel/react'],
             plugins: ['styled-jsx/babel'],
           },
         },
@@ -97,20 +104,14 @@ module.exports = async () => {
     configs,
     {
       ...configs,
-
-      entry: {
-        index: 'index.js',
-      },
+      entry: '[name].js',
     },
     {
       ...configs,
-
       mode: 'production',
-
       entry: {
         'index.min': path.join(componentsPath, 'index.js'),
       },
-
       output: {
         filename: '[name].js',
         path: path.resolve(__dirname, '../dist'),

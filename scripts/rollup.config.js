@@ -6,7 +6,8 @@ import fs from 'fs-extra'
 import path from 'path'
 
 const root = path.join(__dirname, '../')
-const componentsPath = path.join(root)
+const componentsPath = path.join(root, 'src')
+console.log(componentsPath)
 const distPath = path.join(root, 'dist')
 const esmPath = path.join(root, 'esm')
 
@@ -72,6 +73,8 @@ export default (async () => {
   await fs.remove(esmPath)
   const files = await fs.readdir(componentsPath)
 
+  console.log(files)
+
   const components = await Promise.all(
     files.map(async name => {
       const unitPath = path.join(componentsPath, name)
@@ -94,13 +97,16 @@ export default (async () => {
     // Bundle each component separately
     ...components
       .filter(r => !!r)
-      .map(({ name, url }) => ({
-        input: { [name]: url },
-        // output: [esmOutput, cjsOutput],
-        output: [cjsOutput],
-        external,
-        plugins,
-      })),
+      .map(({ name, url }) => {
+        console.log(name, url)
+        return {
+          input: { [name]: url },
+          // output: [esmOutput, cjsOutput],
+          output: [cjsOutput],
+          external,
+          plugins,
+        }
+      }),
     // Bundle for packages containing all components.
     {
       input: { index: 'index.js' },

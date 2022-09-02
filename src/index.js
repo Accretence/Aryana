@@ -13,7 +13,7 @@ import {
   handleProductData,
   handleProductsData,
   handleUserData,
-} from './src/handlers/index.js'
+} from './handlers/index.js'
 
 import {
   burnToast,
@@ -22,7 +22,7 @@ import {
   getLocaleAlignment,
   isLocaleRTL,
   getLocaleDirection,
-} from './src/helpers/index.js'
+} from './helpers/index.js'
 
 import {
   Crown,
@@ -32,9 +32,9 @@ import {
   Layout,
   Wrapper,
   YouTube,
-} from './src/components/index.js'
+} from './components/index.js'
 
-import { useWindowSize } from './src/hooks/index.js'
+import { useWindowSize } from './hooks/index.js'
 
 export {
   loginHandler,
