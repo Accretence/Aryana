@@ -1,13 +1,12 @@
 import commonjs from '@rollup/plugin-commonjs'
 import nodeResolve from '@rollup/plugin-node-resolve'
 import localResolve from 'rollup-plugin-local-resolve'
-import babel from '@rollup/plugin-babel'
+import { babel } from '@rollup/plugin-babel'
 import fs from 'fs-extra'
 import path from 'path'
 
 const root = path.join(__dirname, '../')
 const componentsPath = path.join(root, 'src')
-console.log(componentsPath)
 const distPath = path.join(root, 'dist')
 const esmPath = path.join(root, 'esm')
 
@@ -71,9 +70,8 @@ const esmOutput = {
 export default (async () => {
   await fs.remove(distPath)
   await fs.remove(esmPath)
-  const files = await fs.readdir(componentsPath)
 
-  console.log(files)
+  const files = await fs.readdir(componentsPath)
 
   const components = await Promise.all(
     files.map(async name => {
@@ -98,7 +96,7 @@ export default (async () => {
     ...components
       .filter(r => !!r)
       .map(({ name, url }) => {
-        console.log(name, url)
+        console.log({ name, url })
         return {
           input: { [name]: url },
           // output: [esmOutput, cjsOutput],
@@ -109,7 +107,7 @@ export default (async () => {
       }),
     // Bundle for packages containing all components.
     {
-      input: { index: 'index.js' },
+      input: { index: 'src/index.js' },
       output: [
         // {
         //   ...esmOutput,
