@@ -28,11 +28,16 @@ import {
   Lock,
 } from '@geist-ui/icons'
 
-import { GoogleIcon } from './SVGs'
+import { GoogleIcon } from './SVGs.js'
 
-import { getGoogleURL, isEmail, getLocaleDirection, isLocaleRTL } from '../helpers'
-import { registerHandler, loginHandler } from '../handlers'
-import { useWindowSize } from '../hooks'
+import {
+  getGoogleURL,
+  isEmail,
+  getLocaleDirection,
+  isLocaleRTL,
+} from '../helpers/index.js'
+import { registerHandler, loginHandler } from '../handlers/index.js'
+import { useWindowSize } from '../hooks/index.js'
 
 export default function ({ config, i18n, useThemeProvider, useAuth }) {
   const theme = useTheme()

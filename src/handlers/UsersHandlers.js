@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { Link as LinkIcon } from '@geist-ui/icons'
 
-import { burnToast } from '../helpers'
+import { burnToast } from '../helpers/index.js'
 
 export async function handleUserData({
   response,

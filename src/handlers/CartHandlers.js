@@ -1,5 +1,4 @@
-import Link from 'next/link'
-import { burnToast } from '../helpers'
+import { burnToast } from '../helpers/index.js'
 
 export async function handleCartData({
   response,

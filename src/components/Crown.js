@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 import { Spacer, Text, useTheme } from '@geist-ui/core'
 
-import { getLocaleDirection } from '../helpers'
+import { getLocaleDirection } from '../helpers/index.js'
 
 export default function ({ config, i18n, large, small }) {
   const theme = useTheme()

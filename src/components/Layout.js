@@ -1,10 +1,10 @@
-import Crown from './Crown'
-import Footer from './Footer'
-import Header from './Header'
-import Helmet from './Helmet'
-import Wrapper from './Wrapper'
+import Crown from './Crown.js'
+import Footer from './Footer.js'
+import Header from './Header.js'
+import Helmet from './Helmet.js'
+import Wrapper from './Wrapper.js'
 
-import defaultProps from '../config/props.config'
+import defaultProps from '../config/props.config.js'
 
 const Layout = ({
   config,

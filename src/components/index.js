@@ -1,9 +1,9 @@
-import Crown from './Crown'
-import Footer from './Footer'
-import Header from './Header'
-import Helmet from './Helmet'
-import Layout from './Layout'
-import Wrapper from './Wrapper'
-import YouTube from './YouTube'
+import Crown from './Crown.js'
+import Footer from './Footer.js'
+import Header from './Header.js'
+import Helmet from './Helmet.js'
+import Layout from './Layout.js'
+import Wrapper from './Wrapper.js'
+import YouTube from './YouTube.js'
 
 export { Crown, Footer, Header, Helmet, Layout, Wrapper, YouTube }

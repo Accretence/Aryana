@@ -7,11 +7,11 @@ import {
   subscribeHandler,
   forgotHandler,
   resetHandler,
-} from './AuthenticationHandlers'
-import { handleCartData, handleAddToCartData } from './CartHandlers'
-import { handleOrderData } from './OrderHandlers'
-import { handleProductData, handleProductsData } from './ProductsHandlers'
-import { handleUserData } from './UsersHandlers'
+} from './AuthenticationHandlers.js'
+import { handleCartData, handleAddToCartData } from './CartHandlers.js'
+import { handleOrderData } from './OrderHandlers.js'
+import { handleProductData, handleProductsData } from './ProductsHandlers.js'
+import { handleUserData } from './UsersHandlers.js'
 
 export {
   loginHandler,

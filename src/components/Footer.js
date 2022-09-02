@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { Text, Grid, useTheme, Collapse } from '@geist-ui/core'
 import { useRouter } from 'next/router'
 
-import { isLocaleRTL, getLocaleDirection } from '../helpers'
+import { isLocaleRTL, getLocaleDirection } from '../helpers/index.js'
 
 export default function ({ config, i18n }) {
   const theme = useTheme()

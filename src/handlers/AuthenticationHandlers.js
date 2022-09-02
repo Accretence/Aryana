@@ -1,5 +1,6 @@
 import axios from 'axios'
-import { burnToast } from '../helpers'
+
+import { burnToast } from '../helpers/index.js'
 
 export async function loginHandler({
   config,

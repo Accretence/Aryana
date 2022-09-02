@@ -1,7 +1,7 @@
-import getGoogleURL from './getGoogleURL'
-import isEmail from './isEmail'
-import { getLocaleAlignment, isLocaleRTL, getLocaleDirection } from './RTL'
-import burnToast from './burnToast'
+import getGoogleURL from './getGoogleURL.js'
+import isEmail from './isEmail.js'
+import { getLocaleAlignment, isLocaleRTL, getLocaleDirection } from './RTL.js'
+import burnToast from './burnToast.js'
 
 export {
   burnToast,
