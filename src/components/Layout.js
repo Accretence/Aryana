@@ -10,6 +10,7 @@ const Layout = ({
   config,
   i18n,
   useThemeProvider,
+  useAuth,
   crownLarge,
   crownSmall,
   metaTitle,
@@ -26,7 +27,12 @@ const Layout = ({
         image={metaImage}
         description={metaDescription}
       />
-      <Header config={config} i18n={i18n} useThemeProvider={useThemeProvider} />
+      <Header
+        config={config}
+        i18n={i18n}
+        useThemeProvider={useThemeProvider}
+        useAuth={useAuth}
+      />
       <Crown config={config} i18n={i18n} large={crownLarge} small={crownSmall} />
       <Wrapper config={config}>{children}</Wrapper>
       <Footer config={config} i18n={i18n} />

@@ -26,6 +26,8 @@ import {
 
 import { Crown, Footer, Header, Helmet, Layout, Wrapper, YouTube } from './src/components'
 
+import { useWindowSize } from './src/hooks'
+
 export {
   loginHandler,
   registerHandler,
@@ -54,4 +56,5 @@ export {
   Layout,
   Wrapper,
   YouTube,
+  useWindowSize,
 }

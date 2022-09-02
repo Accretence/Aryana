@@ -29,10 +29,12 @@ import {
 } from '@geist-ui/icons'
 
 import { GoogleIcon } from './SVGs'
+
 import { getGoogleURL, isEmail, getLocaleDirection, isLocaleRTL } from '../helpers'
 import { registerHandler, loginHandler } from '../handlers'
+import { useWindowSize } from '../hooks'
 
-export default function ({ config, i18n, useThemeProvider, useAuth, useWindowSize }) {
+export default function ({ config, i18n, useThemeProvider, useAuth }) {
   const theme = useTheme()
   const themeProvider = useThemeProvider()
   const { width, height } = useWindowSize()
