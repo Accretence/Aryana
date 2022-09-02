@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import useState from 'react-usestateref'
 import { useRouter } from 'next/router'
-import { useEffect } from 'react'
+import React, { useEffect } from 'react'
 import {
   Modal,
   Collapse,

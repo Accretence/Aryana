@@ -1,3 +1,4 @@
+import React from 'react'
 import { useRouter } from 'next/router'
 import { Spacer, Text, useTheme } from '@geist-ui/core'
 

@@ -52153,29 +52153,29 @@ function Crown (_ref) {
       locale = _useRouter$locale === void 0 ? config.defaultLocale : _useRouter$locale;
 
   var smallComponent = small;
-  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
+  return /*#__PURE__*/React$2.createElement(React$2.Fragment, null, /*#__PURE__*/React$2.createElement("div", {
     className: style.dynamic([["3758566510", [config.theme.width, theme.layout.pageMargin]]]) + " " + "Banner"
-  }, /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React$2.createElement("div", {
     style: {
       marginTop: '1rem',
       marginBottom: '3rem'
     },
     className: style.dynamic([["3758566510", [config.theme.width, theme.layout.pageMargin]]])
-  }, large && small && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Text, {
+  }, large && small && /*#__PURE__*/React$2.createElement(React$2.Fragment, null, /*#__PURE__*/React$2.createElement(Text, {
     h3: true,
     mb: 0,
     pb: 0,
     style: {
       direction: getLocaleDirection(locale)
     }
-  }, large.toUpperCase()), /*#__PURE__*/React.createElement(Text, {
+  }, large.toUpperCase()), /*#__PURE__*/React$2.createElement(Text, {
     mt: 0.2,
     type: "secondary",
     style: {
       fontSize: '0.85rem',
       direction: getLocaleDirection(locale)
     }
-  }, smallComponent)))), /*#__PURE__*/React.createElement(Spacer, null), /*#__PURE__*/React.createElement(style, {
+  }, smallComponent)))), /*#__PURE__*/React$2.createElement(Spacer, null), /*#__PURE__*/React$2.createElement(style, {
     id: "3758566510",
     dynamic: [config.theme.width, theme.layout.pageMargin]
   }, ".Banner{width:".concat(config.theme.width, ";max-width:100%;margin:0 auto;padding:0 ").concat(theme.layout.pageMargin, ";box-sizing:border-box;text-align:justify !important;}")));
@@ -52193,19 +52193,19 @@ function Footer (_ref) {
   var footer = i18n['components']['footer'];
 
   var Copyright = function Copyright() {
-    return /*#__PURE__*/React.createElement("div", {
+    return /*#__PURE__*/React$2.createElement("div", {
       style: {
         display: 'block',
         justifyItems: 'right'
       }
-    }, /*#__PURE__*/React.createElement(Text, {
+    }, /*#__PURE__*/React$2.createElement(Text, {
       h4: true,
       my: 0,
       style: {
         textAlign: 'left',
         direction: isLocaleRTL(locale) ? 'rtl' : 'ltr'
       }
-    }, footer['title'][locale].toUpperCase()), /*#__PURE__*/React.createElement(Text, {
+    }, footer['title'][locale].toUpperCase()), /*#__PURE__*/React$2.createElement(Text, {
       mt: 0,
       style: {
         fontSize: '0.7rem',
@@ -52216,28 +52216,28 @@ function Footer (_ref) {
     }, footer['copyright'][locale]));
   };
 
-  return /*#__PURE__*/React.createElement(React.Fragment, null, footer && /*#__PURE__*/React.createElement("footer", {
+  return /*#__PURE__*/React$2.createElement(React$2.Fragment, null, footer && /*#__PURE__*/React$2.createElement("footer", {
     className: style.dynamic([["2186344485", [theme.palette.border, config.theme.width, theme.layout.pageMargin]]])
-  }, /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React$2.createElement("div", {
     className: style.dynamic([["2186344485", [theme.palette.border, config.theme.width, theme.layout.pageMargin]]]) + " " + "FooterWrapper"
-  }, /*#__PURE__*/React.createElement(Grid.Container, null, /*#__PURE__*/React.createElement(Grid, {
+  }, /*#__PURE__*/React$2.createElement(Grid.Container, null, /*#__PURE__*/React$2.createElement(Grid, {
     xs: 24,
     md: 0
-  }, /*#__PURE__*/React.createElement(Mobile, {
+  }, /*#__PURE__*/React$2.createElement(Mobile, {
     config: config,
     footer: footer
-  })), /*#__PURE__*/React.createElement(Grid, {
+  })), /*#__PURE__*/React$2.createElement(Grid, {
     xs: 0,
     md: 24
-  }, /*#__PURE__*/React.createElement(Desktop, {
+  }, /*#__PURE__*/React$2.createElement(Desktop, {
     config: config,
     footer: footer
-  })), /*#__PURE__*/React.createElement(Grid, {
+  })), /*#__PURE__*/React$2.createElement(Grid, {
     xs: 24,
     md: 0
-  }, /*#__PURE__*/React.createElement(Copyright, {
+  }, /*#__PURE__*/React$2.createElement(Copyright, {
     className: style.dynamic([["2186344485", [theme.palette.border, config.theme.width, theme.layout.pageMargin]]])
-  }))))), /*#__PURE__*/React.createElement(style, {
+  }))))), /*#__PURE__*/React$2.createElement(style, {
     id: "2186344485",
     dynamic: [theme.palette.border, config.theme.width, theme.layout.pageMargin]
   }, "footer{border-top:1px solid ".concat(theme.palette.border, ";}.FooterWrapper{width:").concat(config.theme.width, ";max-width:100%;margin:0 auto;padding:0 ").concat(theme.layout.pageMargin, ";vertical-align:text-top;box-sizing:border-box;}")));
@@ -52251,13 +52251,13 @@ function Desktop(_ref2) {
       _useRouter2$locale = _useRouter2.locale,
       locale = _useRouter2$locale === void 0 ? config.defaultLocale : _useRouter2$locale;
 
-  return /*#__PURE__*/React.createElement(Grid.Container, {
+  return /*#__PURE__*/React$2.createElement(Grid.Container, {
     gap: 1,
     my: 2
-  }, isLocaleRTL(locale) ? /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(DesktopLinks, {
+  }, isLocaleRTL(locale) ? /*#__PURE__*/React$2.createElement(React$2.Fragment, null, /*#__PURE__*/React$2.createElement(DesktopLinks, {
     config: config,
     footer: footer
-  }), /*#__PURE__*/React.createElement(Grid, {
+  }), /*#__PURE__*/React$2.createElement(Grid, {
     px: 0,
     style: {
       display: 'block'
@@ -52265,14 +52265,14 @@ function Desktop(_ref2) {
     xs: 24,
     md: 8,
     mb: 2
-  }, /*#__PURE__*/React.createElement(Text, {
+  }, /*#__PURE__*/React$2.createElement(Text, {
     h4: true,
     my: 0,
     style: {
       textAlign: 'start',
       direction: 'rtl'
     }
-  }, footer['title'][locale].toUpperCase()), /*#__PURE__*/React.createElement(Text, {
+  }, footer['title'][locale].toUpperCase()), /*#__PURE__*/React$2.createElement(Text, {
     mt: 0,
     style: {
       fontSize: '0.7rem',
@@ -52280,7 +52280,7 @@ function Desktop(_ref2) {
       direction: 'rtl'
     },
     type: "secondary"
-  }, footer['copyright'][locale]))) : /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Grid, {
+  }, footer['copyright'][locale]))) : /*#__PURE__*/React$2.createElement(React$2.Fragment, null, /*#__PURE__*/React$2.createElement(Grid, {
     px: 0,
     style: {
       display: 'block'
@@ -52288,17 +52288,17 @@ function Desktop(_ref2) {
     xs: 24,
     md: 8,
     mb: 2
-  }, /*#__PURE__*/React.createElement(Text, {
+  }, /*#__PURE__*/React$2.createElement(Text, {
     h4: true,
     my: 0
-  }, footer['title'][locale].toUpperCase()), /*#__PURE__*/React.createElement(Text, {
+  }, footer['title'][locale].toUpperCase()), /*#__PURE__*/React$2.createElement(Text, {
     mt: 0,
     small: true,
     style: {
       fontSize: '0.7rem'
     },
     type: "secondary"
-  }, footer['copyright'][locale])), /*#__PURE__*/React.createElement(DesktopLinks, {
+  }, footer['copyright'][locale])), /*#__PURE__*/React$2.createElement(DesktopLinks, {
     config: config,
     footer: footer
   })));
@@ -52312,15 +52312,15 @@ function DesktopLinks(_ref3) {
       _useRouter3$locale = _useRouter3.locale,
       locale = _useRouter3$locale === void 0 ? config.defaultLocale : _useRouter3$locale;
 
-  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(React.Fragment, null, footer && footer.links.map(function (category) {
-    return /*#__PURE__*/React.createElement(Grid, {
+  return /*#__PURE__*/React$2.createElement(React$2.Fragment, null, /*#__PURE__*/React$2.createElement(React$2.Fragment, null, footer && footer.links.map(function (category) {
+    return /*#__PURE__*/React$2.createElement(Grid, {
       style: {
         display: 'block'
       },
       xs: 12,
       md: 4,
       key: Math.random()
-    }, /*#__PURE__*/React.createElement(Text, {
+    }, /*#__PURE__*/React$2.createElement(Text, {
       h5: true,
       b: true,
       style: {
@@ -52328,12 +52328,12 @@ function DesktopLinks(_ref3) {
         textAlign: 'end'
       }
     }, category[locale]), category['links'].map(function (link) {
-      return /*#__PURE__*/React.createElement(Link, {
+      return /*#__PURE__*/React$2.createElement(Link, {
         key: link['label'][locale],
         href: link.value
-      }, /*#__PURE__*/React.createElement("a", {
+      }, /*#__PURE__*/React$2.createElement("a", {
         className: "jsx-988996493" + " " + "FooterLink"
-      }, /*#__PURE__*/React.createElement(Text, {
+      }, /*#__PURE__*/React$2.createElement(Text, {
         px: 0,
         style: {
           fontSize: '0.8rem',
@@ -52342,7 +52342,7 @@ function DesktopLinks(_ref3) {
         }
       }, link['label'][locale])));
     }));
-  })), /*#__PURE__*/React.createElement(style, {
+  })), /*#__PURE__*/React$2.createElement(style, {
     id: "988996493"
   }, "h5{white-space:nowrap;}"));
 }
@@ -52355,11 +52355,11 @@ function Mobile(_ref4) {
       _useRouter4$locale = _useRouter4.locale;
       _useRouter4$locale === void 0 ? config.defaultLocale : _useRouter4$locale;
 
-  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Collapse.Group, {
+  return /*#__PURE__*/React$2.createElement(React$2.Fragment, null, /*#__PURE__*/React$2.createElement(Collapse.Group, {
     width: "100%",
     mt: 1,
     mb: 2
-  }, /*#__PURE__*/React.createElement(MobileLinks, {
+  }, /*#__PURE__*/React$2.createElement(MobileLinks, {
     config: config,
     footer: footer
   })));
@@ -52374,18 +52374,18 @@ function MobileLinks(_ref5) {
       _useRouter5$locale = _useRouter5.locale,
       locale = _useRouter5$locale === void 0 ? config.defaultLocale : _useRouter5$locale;
 
-  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(React.Fragment, null, footer && footer.links.map(function (category) {
-    return /*#__PURE__*/React.createElement(Collapse, {
+  return /*#__PURE__*/React$2.createElement(React$2.Fragment, null, /*#__PURE__*/React$2.createElement(React$2.Fragment, null, footer && footer.links.map(function (category) {
+    return /*#__PURE__*/React$2.createElement(Collapse, {
       width: "100%",
       title: category[locale],
       key: category[locale]
     }, category['links'].map(function (link) {
-      return /*#__PURE__*/React.createElement(Link, {
+      return /*#__PURE__*/React$2.createElement(Link, {
         key: link['label'][locale],
         href: link.value
-      }, /*#__PURE__*/React.createElement("a", {
+      }, /*#__PURE__*/React$2.createElement("a", {
         className: style.dynamic([["3433617154", [theme.palette.accents_6, theme.palette.accents_6]]])
-      }, /*#__PURE__*/React.createElement(Text, {
+      }, /*#__PURE__*/React$2.createElement(Text, {
         px: 0,
         style: {
           direction: getLocaleDirection(locale),
@@ -52393,7 +52393,7 @@ function MobileLinks(_ref5) {
         }
       }, link['label'][locale])));
     }));
-  })), /*#__PURE__*/React.createElement(style, {
+  })), /*#__PURE__*/React$2.createElement(style, {
     id: "3433617154",
     dynamic: [theme.palette.accents_6, theme.palette.accents_6]
   }, ".FooterWrapper>.item>.item>.collapse-group>.collapse>.view>.title>h3{font-size:1rem !important;font-weight:400 !important;color:".concat(theme.palette.accents_6, ";}.FooterWrapper>.item>.item>.collapse-group>.collapse>.view>.title>svg{color:").concat(theme.palette.accents_6, "!important;}.collapse{border-top:none !important;}")));
@@ -52416,13 +52416,13 @@ var dist = useStateRef;
 
 var GoogleIcon = function GoogleIcon(_ref) {
   var color = _ref.color;
-  return /*#__PURE__*/React.createElement("svg", {
+  return /*#__PURE__*/React$2.createElement("svg", {
     width: "16px",
     height: "16px",
     viewBox: "0 0 16 16",
     xmlns: "http://www.w3.org/2000/svg",
     fill: color ? color : 'currentColor'
-  }, /*#__PURE__*/React.createElement("path", {
+  }, /*#__PURE__*/React$2.createElement("path", {
     d: "M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352 2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z"
   }));
 };
@@ -52547,31 +52547,31 @@ function Header (_ref) {
         setLoading = _useState16[1];
         _useState16[2];
 
-    return /*#__PURE__*/React.createElement(React.Fragment, null, config && i18n && buttons && /*#__PURE__*/React.createElement(Modal, {
+    return /*#__PURE__*/React$2.createElement(React$2.Fragment, null, config && i18n && buttons && /*#__PURE__*/React$2.createElement(Modal, {
       py: 0.2,
       visible: modalVis,
       onClose: function onClose() {
         return setModalVis(false);
       }
-    }, /*#__PURE__*/React.createElement(Modal.Content, {
+    }, /*#__PURE__*/React$2.createElement(Modal.Content, {
       pt: 0.5,
       pb: 2.5
-    }, /*#__PURE__*/React.createElement(Collapse.Group, null, /*#__PURE__*/React.createElement(Collapse, {
-      title: /*#__PURE__*/React.createElement(Text, {
+    }, /*#__PURE__*/React$2.createElement(Collapse.Group, null, /*#__PURE__*/React$2.createElement(Collapse, {
+      title: /*#__PURE__*/React$2.createElement(Text, {
         style: {
           fontSize: '1rem',
           fontWeight: '600'
         },
         my: 0
       }, header['modal']['login']['title'][locale]),
-      subtitle: /*#__PURE__*/React.createElement(Text, {
+      subtitle: /*#__PURE__*/React$2.createElement(Text, {
         small: true
       }, header['modal']['login']['subtitle'][locale])
-    }, /*#__PURE__*/React.createElement(Input, {
-      label: !isLocaleRTL(locale) && /*#__PURE__*/React.createElement(icons.Mail, {
+    }, /*#__PURE__*/React$2.createElement(Input, {
+      label: !isLocaleRTL(locale) && /*#__PURE__*/React$2.createElement(icons.Mail, {
         size: 16
       }),
-      labelRight: isLocaleRTL(locale) && /*#__PURE__*/React.createElement(icons.Mail, {
+      labelRight: isLocaleRTL(locale) && /*#__PURE__*/React$2.createElement(icons.Mail, {
         size: 16
       }),
       placeholder: i18n['inputs']['email']['placeholder'][locale],
@@ -52581,11 +52581,11 @@ function Header (_ref) {
       onChange: function onChange(e) {
         setEmail(e.target.value.trim());
       }
-    }), /*#__PURE__*/React.createElement(Input.Password, {
-      label: !isLocaleRTL(locale) && /*#__PURE__*/React.createElement(icons.Lock, {
+    }), /*#__PURE__*/React$2.createElement(Input.Password, {
+      label: !isLocaleRTL(locale) && /*#__PURE__*/React$2.createElement(icons.Lock, {
         size: 16
       }),
-      labelRight: isLocaleRTL(locale) && /*#__PURE__*/React.createElement(icons.Lock, {
+      labelRight: isLocaleRTL(locale) && /*#__PURE__*/React$2.createElement(icons.Lock, {
         size: 16
       }),
       placeholder: i18n['inputs']['password']['placeholder'][locale],
@@ -52596,7 +52596,7 @@ function Header (_ref) {
       onChange: function onChange(e) {
         setPassword(e.target.value.trim());
       }
-    }), /*#__PURE__*/React.createElement(Button, {
+    }), /*#__PURE__*/React$2.createElement(Button, {
       loading: loading,
       disabled: !refEmail.current || !refPassword.current || !isEmail(refEmail.current) || refPassword.current.length < 8,
       width: "100%",
@@ -52614,36 +52614,36 @@ function Header (_ref) {
           toast: i18n['toasts']['login'][locale]
         });
       },
-      icon: /*#__PURE__*/React.createElement(icons.LogIn, null)
-    }, buttons['login'][locale]), /*#__PURE__*/React.createElement(Link, {
+      icon: /*#__PURE__*/React$2.createElement(icons.LogIn, null)
+    }, buttons['login'][locale]), /*#__PURE__*/React$2.createElement(Link, {
       href: "/auth/reset"
-    }, /*#__PURE__*/React.createElement("a", {
+    }, /*#__PURE__*/React$2.createElement("a", {
       className: style.dynamic([["4150216034", [theme.palette.accents_6, theme.palette.code, theme.palette.background]]]) + " " + "Peculiar"
-    }, /*#__PURE__*/React.createElement(Text, {
+    }, /*#__PURE__*/React$2.createElement(Text, {
       style: {
         direction: getLocaleDirection(locale),
         textAlign: isLocaleRTL(locale) ? 'right' : 'left'
       }
-    }, buttons['forgot'][locale])))), /*#__PURE__*/React.createElement(Collapse, {
+    }, buttons['forgot'][locale])))), /*#__PURE__*/React$2.createElement(Collapse, {
       id: "Register",
       style: {
         borderBottom: 'none'
       },
-      title: /*#__PURE__*/React.createElement(Text, {
+      title: /*#__PURE__*/React$2.createElement(Text, {
         style: {
           fontSize: '1rem',
           fontWeight: '600'
         },
         my: 0
       }, header['modal']['register']['title'][locale]),
-      subtitle: /*#__PURE__*/React.createElement(Text, {
+      subtitle: /*#__PURE__*/React$2.createElement(Text, {
         small: true
       }, header['modal']['register']['subtitle'][locale])
-    }, /*#__PURE__*/React.createElement(Input, {
-      label: !isLocaleRTL(locale) && /*#__PURE__*/React.createElement(icons.Mail, {
+    }, /*#__PURE__*/React$2.createElement(Input, {
+      label: !isLocaleRTL(locale) && /*#__PURE__*/React$2.createElement(icons.Mail, {
         size: 16
       }),
-      labelRight: isLocaleRTL(locale) && /*#__PURE__*/React.createElement(icons.Mail, {
+      labelRight: isLocaleRTL(locale) && /*#__PURE__*/React$2.createElement(icons.Mail, {
         size: 16
       }),
       placeholder: i18n['inputs']['email']['placeholder'][locale],
@@ -52653,17 +52653,17 @@ function Header (_ref) {
       onChange: function onChange(e) {
         setEmail(e.target.value.trim());
       }
-    }), !refEmail.current == '' && !isEmail(refEmail.current) && /*#__PURE__*/React.createElement(Text, {
+    }), !refEmail.current == '' && !isEmail(refEmail.current) && /*#__PURE__*/React$2.createElement(Text, {
       style: {
         direction: getLocaleDirection(locale)
       },
       small: true,
       type: "error"
-    }, i18n['inputs']['email']['error'][locale]), /*#__PURE__*/React.createElement(Input.Password, {
-      label: !isLocaleRTL(locale) && /*#__PURE__*/React.createElement(icons.Lock, {
+    }, i18n['inputs']['email']['error'][locale]), /*#__PURE__*/React$2.createElement(Input.Password, {
+      label: !isLocaleRTL(locale) && /*#__PURE__*/React$2.createElement(icons.Lock, {
         size: 16
       }),
-      labelRight: isLocaleRTL(locale) && /*#__PURE__*/React.createElement(icons.Lock, {
+      labelRight: isLocaleRTL(locale) && /*#__PURE__*/React$2.createElement(icons.Lock, {
         size: 16
       }),
       placeholder: i18n['inputs']['password']['placeholder'][locale],
@@ -52674,14 +52674,14 @@ function Header (_ref) {
       onChange: function onChange(e) {
         setPassword(e.target.value.trim());
       }
-    }), !refPassword.current == '' && refPassword.current.length < 8 && /*#__PURE__*/React.createElement(Text, {
+    }), !refPassword.current == '' && refPassword.current.length < 8 && /*#__PURE__*/React$2.createElement(Text, {
       small: true,
       type: "error"
-    }, i18n['inputs']['password']['error'][locale]), /*#__PURE__*/React.createElement(Input.Password, {
-      label: !isLocaleRTL(locale) && /*#__PURE__*/React.createElement(icons.Lock, {
+    }, i18n['inputs']['password']['error'][locale]), /*#__PURE__*/React$2.createElement(Input.Password, {
+      label: !isLocaleRTL(locale) && /*#__PURE__*/React$2.createElement(icons.Lock, {
         size: 16
       }),
-      labelRight: isLocaleRTL(locale) && /*#__PURE__*/React.createElement(icons.Lock, {
+      labelRight: isLocaleRTL(locale) && /*#__PURE__*/React$2.createElement(icons.Lock, {
         size: 16
       }),
       placeholder: i18n['inputs']['confirmPassword']['placeholder'][locale],
@@ -52692,13 +52692,13 @@ function Header (_ref) {
       onChange: function onChange(e) {
         setConfirmPassword(e.target.value.trim());
       }
-    }), !refConfirmPassword.current == '' && refConfirmPassword.current.length < 8 && /*#__PURE__*/React.createElement(Text, {
+    }), !refConfirmPassword.current == '' && refConfirmPassword.current.length < 8 && /*#__PURE__*/React$2.createElement(Text, {
       small: true,
       type: "error"
-    }, i18n['inputs']['confirmPassword']['error'][locale], ' '), !refConfirmPassword.current == '' && refConfirmPassword.current != refPassword.current && /*#__PURE__*/React.createElement(Text, {
+    }, i18n['inputs']['confirmPassword']['error'][locale], ' '), !refConfirmPassword.current == '' && refConfirmPassword.current != refPassword.current && /*#__PURE__*/React$2.createElement(Text, {
       small: true,
       type: "error"
-    }, i18n['inputs']['password']['error'][locale]), /*#__PURE__*/React.createElement(Button, {
+    }, i18n['inputs']['password']['error'][locale]), /*#__PURE__*/React$2.createElement(Button, {
       loading: loading,
       disabled: !refEmail.current || !refPassword.current || refConfirmPassword.current != refPassword.current || !isEmail(refEmail.current) || refPassword.current.length < 8 || refConfirmPassword.current.length < 8,
       width: "100%",
@@ -52715,33 +52715,33 @@ function Header (_ref) {
           refPassword: refPassword
         });
       },
-      icon: /*#__PURE__*/React.createElement(icons.UserPlus, null)
-    }, buttons['register'][locale]))), /*#__PURE__*/React.createElement(Divider, {
+      icon: /*#__PURE__*/React$2.createElement(icons.UserPlus, null)
+    }, buttons['register'][locale]))), /*#__PURE__*/React$2.createElement(Divider, {
       mt: 1,
       mb: 3
-    }, "/"), /*#__PURE__*/React.createElement("a", {
+    }, "/"), /*#__PURE__*/React$2.createElement("a", {
       href: getGoogleURL(),
       className: style.dynamic([["4150216034", [theme.palette.accents_6, theme.palette.code, theme.palette.background]]])
-    }, /*#__PURE__*/React.createElement(Button, {
-      icon: /*#__PURE__*/React.createElement(GoogleIcon, null),
+    }, /*#__PURE__*/React$2.createElement(Button, {
+      icon: /*#__PURE__*/React$2.createElement(GoogleIcon, null),
       type: "secondary",
       width: "100%",
       mt: 0.8,
       onClick: function onClick() {}
-    }, buttons['google']['active'][locale])))), /*#__PURE__*/React.createElement(style, {
+    }, buttons['google']['active'][locale])))), /*#__PURE__*/React$2.createElement(style, {
       id: "4150216034",
       dynamic: [theme.palette.accents_6, theme.palette.code, theme.palette.background]
     }, ".Peculiar{color:".concat(theme.palette.accents_6, "!important;font-size:0.75rem;}.Peculiar:hover{color:").concat(theme.palette.code, "!important;}.divider>span{background-color:").concat(theme.palette.background, "!important;}")));
   };
 
   var Title = function Title() {
-    return /*#__PURE__*/React.createElement(React.Fragment, null, i18n && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Text, {
+    return /*#__PURE__*/React$2.createElement(React$2.Fragment, null, i18n && /*#__PURE__*/React$2.createElement(React$2.Fragment, null, /*#__PURE__*/React$2.createElement(Text, {
       mt: 1.5,
       className: "MenuNavigationTitle"
-    }, /*#__PURE__*/React.createElement(Link, {
+    }, /*#__PURE__*/React$2.createElement(Link, {
       className: "MenuNavigationTitle",
       href: "/"
-    }, i18n['components']['header']['title'][locale].toUpperCase()))), /*#__PURE__*/React.createElement(style, {
+    }, i18n['components']['header']['title'][locale].toUpperCase()))), /*#__PURE__*/React$2.createElement(style, {
       id: "10417662",
       dynamic: [theme.palette.foreground, locale == 'en' ? '0.3rem' : 0]
     }, ".MenuNavigationTitle a{color:".concat(theme.palette.foreground, "!important;font-size:2.2rem;font-weight:600;-webkit-letter-spacing:").concat(locale == 'en' ? '0.3rem' : 0, ";-moz-letter-spacing:").concat(locale == 'en' ? '0.3rem' : 0, ";-ms-letter-spacing:").concat(locale == 'en' ? '0.3rem' : 0, ";letter-spacing:").concat(locale == 'en' ? '0.3rem' : 0, ";}")));
@@ -52749,48 +52749,48 @@ function Header (_ref) {
 
   var Submenu = function Submenu() {
     var submenu = i18n['components']['header']['submenu'];
-    return /*#__PURE__*/React.createElement(React.Fragment, null, config && i18n && submenu && /*#__PURE__*/React.createElement("nav", {
+    return /*#__PURE__*/React$2.createElement(React$2.Fragment, null, config && i18n && submenu && /*#__PURE__*/React$2.createElement("nav", {
       className: style.dynamic([["2633528102", [theme.palette.border, theme.palette.background, theme.type === 'dark' ? "inset 0 -1px ".concat(theme.palette.border) : 'rgba(0, 0, 0, 0.1) 0 0 15px 0', config.theme.width, theme.layout.pageMargin, theme.palette.accents_5, theme.palette.foreground, theme.palette.foreground]]]) + " " + "SubmenuWrapper"
-    }, /*#__PURE__*/React.createElement("div", {
+    }, /*#__PURE__*/React$2.createElement("div", {
       className: style.dynamic([["2633528102", [theme.palette.border, theme.palette.background, theme.type === 'dark' ? "inset 0 -1px ".concat(theme.palette.border) : 'rgba(0, 0, 0, 0.1) 0 0 15px 0', config.theme.width, theme.layout.pageMargin, theme.palette.accents_5, theme.palette.foreground, theme.palette.foreground]]]) + " " + "Submenu ".concat(sticky ? 'SubmenuSticky' : '')
-    }, /*#__PURE__*/React.createElement("div", {
+    }, /*#__PURE__*/React$2.createElement("div", {
       className: style.dynamic([["2633528102", [theme.palette.border, theme.palette.background, theme.type === 'dark' ? "inset 0 -1px ".concat(theme.palette.border) : 'rgba(0, 0, 0, 0.1) 0 0 15px 0', config.theme.width, theme.layout.pageMargin, theme.palette.accents_5, theme.palette.foreground, theme.palette.foreground]]]) + " " + "SubmenuInner"
-    }, /*#__PURE__*/React.createElement(Tabs, {
+    }, /*#__PURE__*/React$2.createElement(Tabs, {
       align: "center",
       value: matchedURL ? matchedURL[0] : router.pathname,
       onChange: function onChange(route) {
         return router.push(route);
       }
     }, submenu.unprotected.map(function (tab) {
-      return /*#__PURE__*/React.createElement(Tabs.Item, {
+      return /*#__PURE__*/React$2.createElement(Tabs.Item, {
         key: tab['label'][locale],
         label: tab['label'][locale],
         value: tab.value
       });
     }), submenu["protected"].map(function (tab) {
-      return /*#__PURE__*/React.createElement(Tabs.Item, {
+      return /*#__PURE__*/React$2.createElement(Tabs.Item, {
         key: tab['label'][locale],
         label: tab['label'][locale],
         value: tab.value,
         disabled: !isAuthenticated
       });
-    }))))), /*#__PURE__*/React.createElement(style, {
+    }))))), /*#__PURE__*/React$2.createElement(style, {
       id: "2633528102",
       dynamic: [theme.palette.border, theme.palette.background, theme.type === 'dark' ? "inset 0 -1px ".concat(theme.palette.border) : 'rgba(0, 0, 0, 0.1) 0 0 15px 0', config.theme.width, theme.layout.pageMargin, theme.palette.accents_5, theme.palette.foreground, theme.palette.foreground]
     }, ".scroll-container{padding-left:0px !important;border:none !important;}.SubmenuWrapper{height:50px;position:relative;overflow:hidden;box-shadow:inset 0 -1px ".concat(theme.palette.border, ";}.SubmenuSticky{-webkit-transition:box-shadow 1s ease;transition:box-shadow 1s ease;}.SubmenuSticky{position:fixed;z-index:1100;top:0;right:0;left:0;background:").concat(theme.palette.background, ";box-shadow:").concat(theme.type === 'dark' ? "inset 0 -1px ".concat(theme.palette.border) : 'rgba(0, 0, 0, 0.1) 0 0 15px 0', ";}.SubmenuInner{width:").concat(config.theme.width, ";max-width:100%;margin:0 auto;padding:0 ").concat(theme.layout.pageMargin, ";height:50px;overflow-y:hidden;overflow-x:auto;overflow:-moz-scrollbars-none;-ms-overflow-style:none;-webkit-overflow-scrolling:touch;-webkit-scrollbar-width:none;-moz-scrollbar-width:none;-ms-scrollbar-width:none;scrollbar-width:none;box-sizing:border-box;}.SubmenuInner::-webkit-scrollbar{display:none;}.SubmenuInner .content{display:none;}.SubmenuInner .tabs,.SubmenuInner header{height:100%;border:none !important;}.SubmenuInner .tab{height:calc(100% - 2px);padding-top:0;padding-bottom:0;color:").concat(theme.palette.accents_5, ";font-size:0.9rem !important;}.SubmenuInner .tab:hover{color:").concat(theme.palette.foreground, ";}.SubmenuInner .active{color:").concat(theme.palette.foreground, ";border:none !important;}")));
   };
 
   var TabletNav = function TabletNav() {
-    return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(Button, {
+    return /*#__PURE__*/React$2.createElement(React$2.Fragment, null, /*#__PURE__*/React$2.createElement("div", null, /*#__PURE__*/React$2.createElement(Button, {
       type: "secondary",
       ghost: true,
       style: {
         border: 'none'
       },
       auto: true,
-      icon: /*#__PURE__*/React.createElement(icons.Search, null)
-    }), themeProvider && /*#__PURE__*/React.createElement(Button, {
-      icon: theme.type === 'dark' ? /*#__PURE__*/React.createElement(icons.Sun, null) : /*#__PURE__*/React.createElement(icons.Moon, null),
+      icon: /*#__PURE__*/React$2.createElement(icons.Search, null)
+    }), themeProvider && /*#__PURE__*/React$2.createElement(Button, {
+      icon: theme.type === 'dark' ? /*#__PURE__*/React$2.createElement(icons.Sun, null) : /*#__PURE__*/React$2.createElement(icons.Moon, null),
       "aria-label": "Toggle Theme",
       mx: 0.5,
       type: "secondary",
@@ -52802,13 +52802,13 @@ function Header (_ref) {
       onClick: function onClick() {
         return themeProvider.setLocalTheme(theme.type === 'dark' ? 'light' : 'dark');
       }
-    })), /*#__PURE__*/React.createElement(Title, {
+    })), /*#__PURE__*/React$2.createElement(Title, {
       config: config,
       i18n: i18n
-    }), /*#__PURE__*/React.createElement("div", null, isAuthenticated ? /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Link, {
+    }), /*#__PURE__*/React$2.createElement("div", null, isAuthenticated ? /*#__PURE__*/React$2.createElement(React$2.Fragment, null, /*#__PURE__*/React$2.createElement(Link, {
       href: "/cart"
-    }, /*#__PURE__*/React.createElement(Button, {
-      icon: /*#__PURE__*/React.createElement(icons.ShoppingCart, null),
+    }, /*#__PURE__*/React$2.createElement(Button, {
+      icon: /*#__PURE__*/React$2.createElement(icons.ShoppingCart, null),
       "aria-label": "Shopping Cart",
       mx: 0.5,
       type: "secondary",
@@ -52817,10 +52817,10 @@ function Header (_ref) {
         border: 'none'
       },
       auto: true
-    })), /*#__PURE__*/React.createElement(Link, {
+    })), /*#__PURE__*/React$2.createElement(Link, {
       href: "/user"
-    }, /*#__PURE__*/React.createElement(Button, {
-      icon: /*#__PURE__*/React.createElement(icons.User, null),
+    }, /*#__PURE__*/React$2.createElement(Button, {
+      icon: /*#__PURE__*/React$2.createElement(icons.User, null),
       "aria-label": "Toggle Theme",
       type: "secondary",
       ghost: true,
@@ -52828,8 +52828,8 @@ function Header (_ref) {
         border: 'none'
       },
       auto: true
-    }))) : /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Button, {
-      icon: /*#__PURE__*/React.createElement(icons.LogIn, null),
+    }))) : /*#__PURE__*/React$2.createElement(React$2.Fragment, null, /*#__PURE__*/React$2.createElement(Button, {
+      icon: /*#__PURE__*/React$2.createElement(icons.LogIn, null),
       "aria-label": "Login Button",
       type: "secondary",
       style: {
@@ -52840,64 +52840,64 @@ function Header (_ref) {
       onClick: function onClick(e) {
         return setModalVis(true);
       }
-    }, buttons['login'][locale]), /*#__PURE__*/React.createElement(LoginModal, null))));
+    }, buttons['login'][locale]), /*#__PURE__*/React$2.createElement(LoginModal, null))));
   };
 
   var PhoneNav = function PhoneNav() {
-    return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Button, {
+    return /*#__PURE__*/React$2.createElement(React$2.Fragment, null, /*#__PURE__*/React$2.createElement(Button, {
       type: "secondary",
       ghost: true,
       style: {
         border: 'none'
       },
       auto: true,
-      icon: /*#__PURE__*/React.createElement(icons.Search, null)
-    }), /*#__PURE__*/React.createElement(Title, {
+      icon: /*#__PURE__*/React$2.createElement(icons.Search, null)
+    }), /*#__PURE__*/React$2.createElement(Title, {
       config: config,
       i18n: i18n
-    }), /*#__PURE__*/React.createElement(Button, {
+    }), /*#__PURE__*/React$2.createElement(Button, {
       type: "secondary",
       ghost: true,
       style: {
         border: 'none'
       },
       auto: true,
-      icon: /*#__PURE__*/React.createElement(icons.Menu, null),
+      icon: /*#__PURE__*/React$2.createElement(icons.Menu, null),
       onClick: function onClick() {
         return drawDrawer();
       }
-    }), /*#__PURE__*/React.createElement(Drawer, {
+    }), /*#__PURE__*/React$2.createElement(Drawer, {
       visible: drawerVis,
       onClose: function onClose() {
         return setDrawerVis(false);
       },
       placement: placement,
       width: "60%"
-    }, /*#__PURE__*/React.createElement(Drawer.Content, null, /*#__PURE__*/React.createElement(ButtonGroup, {
+    }, /*#__PURE__*/React$2.createElement(Drawer.Content, null, /*#__PURE__*/React$2.createElement(ButtonGroup, {
       type: "secondary",
       mx: 0,
       mb: 2,
       width: "100%"
-    }, /*#__PURE__*/React.createElement(Button, {
+    }, /*#__PURE__*/React$2.createElement(Button, {
       disabled: theme.type === 'dark',
-      icon: /*#__PURE__*/React.createElement(icons.Moon, null),
+      icon: /*#__PURE__*/React$2.createElement(icons.Moon, null),
       scale: 1.3,
       "aria-label": "Toggle Dark Mode",
       onClick: function onClick() {
         return themeProvider.setLocalTheme('dark');
       }
-    }), /*#__PURE__*/React.createElement(Button, {
+    }), /*#__PURE__*/React$2.createElement(Button, {
       disabled: theme.type === 'light',
-      icon: /*#__PURE__*/React.createElement(icons.Sun, null),
+      icon: /*#__PURE__*/React$2.createElement(icons.Sun, null),
       scale: 1.3,
       "aria-label": "Toggle Light Mode",
       onClick: function onClick() {
         return themeProvider.setLocalTheme('light');
       }
-    })), isAuthenticated ? /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Link, {
+    })), isAuthenticated ? /*#__PURE__*/React$2.createElement(React$2.Fragment, null, /*#__PURE__*/React$2.createElement(Link, {
       href: "/cart"
-    }, /*#__PURE__*/React.createElement(Button, {
-      icon: /*#__PURE__*/React.createElement(icons.ShoppingCart, null),
+    }, /*#__PURE__*/React$2.createElement(Button, {
+      icon: /*#__PURE__*/React$2.createElement(icons.ShoppingCart, null),
       "aria-label": "Shopping Cart",
       type: "secondary",
       width: "100%",
@@ -52906,10 +52906,10 @@ function Header (_ref) {
       style: {
         border: 'none'
       }
-    })), /*#__PURE__*/React.createElement(Link, {
+    })), /*#__PURE__*/React$2.createElement(Link, {
       href: "/user"
-    }, /*#__PURE__*/React.createElement(Button, {
-      icon: /*#__PURE__*/React.createElement(icons.User, null),
+    }, /*#__PURE__*/React$2.createElement(Button, {
+      icon: /*#__PURE__*/React$2.createElement(icons.User, null),
       "aria-label": "Toggle Theme",
       type: "secondary",
       width: "100%",
@@ -52917,8 +52917,8 @@ function Header (_ref) {
       style: {
         border: 'none'
       }
-    }))) : /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Button, {
-      icon: /*#__PURE__*/React.createElement(icons.LogIn, null),
+    }))) : /*#__PURE__*/React$2.createElement(React$2.Fragment, null, /*#__PURE__*/React$2.createElement(Button, {
+      icon: /*#__PURE__*/React$2.createElement(icons.LogIn, null),
       "aria-label": "Login Button",
       type: "secondary",
       style: {
@@ -52929,26 +52929,26 @@ function Header (_ref) {
       onClick: function onClick(e) {
         return setModalVis(true);
       }
-    }), /*#__PURE__*/React.createElement(LoginModal, null)))), /*#__PURE__*/React.createElement(style, {
+    }), /*#__PURE__*/React$2.createElement(LoginModal, null)))), /*#__PURE__*/React$2.createElement(style, {
       id: "3843846058"
     }, ".btn-group>button{width:100% !important;}"));
   };
 
   var Binder = function Binder(_ref2) {
     var children = _ref2.children;
-    return /*#__PURE__*/React.createElement(React.Fragment, null, config && i18n && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("nav", {
+    return /*#__PURE__*/React$2.createElement(React$2.Fragment, null, config && i18n && /*#__PURE__*/React$2.createElement(React$2.Fragment, null, /*#__PURE__*/React$2.createElement("nav", {
       className: style.dynamic([["4130135573", [config.theme.width, theme.layout.pageMargin, isLocaleRTL(locale) ? '' : '0.5rem', isLocaleRTL(locale) ? '0.5rem' : '']]]) + " " + "Navigation"
-    }, children), /*#__PURE__*/React.createElement(Submenu, {
+    }, children), /*#__PURE__*/React$2.createElement(Submenu, {
       config: config,
       i18n: i18n,
       sticky: sticky
-    }), /*#__PURE__*/React.createElement(style, {
+    }), /*#__PURE__*/React$2.createElement(style, {
       id: "4130135573",
       dynamic: [config.theme.width, theme.layout.pageMargin, isLocaleRTL(locale) ? '' : '0.5rem', isLocaleRTL(locale) ? '0.5rem' : '']
     }, ".Navigation{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;width:".concat(config.theme.width, ";max-width:100%;margin:0 auto;padding:2rem ").concat(theme.layout.pageMargin, ";height:55px;box-sizing:border-box;}.Navigation>div{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}.MainDropdown{margin-left:").concat(isLocaleRTL(locale) ? '' : '0.5rem', ";margin-right:").concat(isLocaleRTL(locale) ? '0.5rem' : '', ";}.MainDropdown>button{white-space:nowrap;}"))));
   };
 
-  return /*#__PURE__*/React.createElement(Binder, null, width > 650 ? /*#__PURE__*/React.createElement(TabletNav, null) : /*#__PURE__*/React.createElement(PhoneNav, null));
+  return /*#__PURE__*/React$2.createElement(Binder, null, width > 650 ? /*#__PURE__*/React$2.createElement(TabletNav, null) : /*#__PURE__*/React$2.createElement(PhoneNav, null));
 }
 
 var head$1 = {exports: {}};
@@ -53227,55 +53227,55 @@ function Helmet (_ref) {
   title = title ? title : i18n['meta']['title'][locale];
   description = description ? description : i18n['meta']['description'][locale];
   image = image ? image : config.meta.image;
-  return /*#__PURE__*/React.createElement(Head, null, /*#__PURE__*/React.createElement("meta", {
+  return /*#__PURE__*/React$2.createElement(Head, null, /*#__PURE__*/React$2.createElement("meta", {
     name: "twitter:card",
     content: "summary_large_image"
-  }), /*#__PURE__*/React.createElement("meta", {
+  }), /*#__PURE__*/React$2.createElement("meta", {
     name: "og:type",
     content: "application"
-  }), /*#__PURE__*/React.createElement("meta", {
+  }), /*#__PURE__*/React$2.createElement("meta", {
     name: "og:locale",
     content: "en_US"
-  }), /*#__PURE__*/React.createElement("meta", {
+  }), /*#__PURE__*/React$2.createElement("meta", {
     name: "twitter:site",
     content: config.meta.handle
-  }), /*#__PURE__*/React.createElement("meta", {
+  }), /*#__PURE__*/React$2.createElement("meta", {
     name: "twitter:creator",
     content: config.meta.handle
-  }), /*#__PURE__*/React.createElement("link", {
+  }), /*#__PURE__*/React$2.createElement("link", {
     rel: "canonical",
     href: config.meta.url
-  }), /*#__PURE__*/React.createElement("meta", {
+  }), /*#__PURE__*/React$2.createElement("meta", {
     name: "theme-color",
     content: "#000000"
-  }), /*#__PURE__*/React.createElement("title", null, title), /*#__PURE__*/React.createElement("meta", {
+  }), /*#__PURE__*/React$2.createElement("title", null, title), /*#__PURE__*/React$2.createElement("meta", {
     name: "twitter:text:title",
     content: title
-  }), /*#__PURE__*/React.createElement("meta", {
+  }), /*#__PURE__*/React$2.createElement("meta", {
     name: "twitter:title",
     content: title
-  }), /*#__PURE__*/React.createElement("meta", {
+  }), /*#__PURE__*/React$2.createElement("meta", {
     name: "og:title",
     content: title
-  }), /*#__PURE__*/React.createElement("meta", {
+  }), /*#__PURE__*/React$2.createElement("meta", {
     name: "description",
     content: description
-  }), /*#__PURE__*/React.createElement("meta", {
+  }), /*#__PURE__*/React$2.createElement("meta", {
     name: "og:description",
     content: description
-  }), /*#__PURE__*/React.createElement("meta", {
+  }), /*#__PURE__*/React$2.createElement("meta", {
     name: "twitter:description",
     content: description
-  }), /*#__PURE__*/React.createElement("meta", {
+  }), /*#__PURE__*/React$2.createElement("meta", {
     name: "twitter:image",
     content: image
-  }), /*#__PURE__*/React.createElement("meta", {
+  }), /*#__PURE__*/React$2.createElement("meta", {
     name: "og:image",
     content: image
-  }), /*#__PURE__*/React.createElement("meta", {
+  }), /*#__PURE__*/React$2.createElement("meta", {
     name: "og:url",
     content: config.meta.url
-  }), /*#__PURE__*/React.createElement("meta", {
+  }), /*#__PURE__*/React$2.createElement("meta", {
     name: "keyword",
     content: config.meta.keywords
   }));
@@ -53290,11 +53290,11 @@ function Wrapper (_ref) {
       _useRouter$locale = _useRouter.locale,
       locale = _useRouter$locale === void 0 ? config.defaultLocale : _useRouter$locale;
 
-  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
+  return /*#__PURE__*/React$2.createElement(React$2.Fragment, null, /*#__PURE__*/React$2.createElement("div", {
     className: style.dynamic([["4085999581", [theme.type == 'light' ? config.theme.lightBackground : config.theme.darkBackground, config.theme.width, theme.layout.pageMargin, theme.type === 'dark' ? config.theme.darkBackground : config.theme.lightBackground, theme.palette.accents_4, theme.palette.code, theme.palette.code, theme.palette.accents_4, theme.palette.accents_4, theme.palette.code, theme.palette.accents_4, theme.palette.code, isLocaleRTL(locale) ? 'end' : 'start', isLocaleRTL(locale) ? 'right' : 'left', getLocaleDirection(locale), isLocaleRTL(locale) && 'absolute !important', isLocaleRTL(locale) && '2.5rem !important', getLocaleDirection(locale), getLocaleAlignment(locale), isLocaleRTL(locale) && '0.6em !important', getLocaleDirection(locale), getLocaleAlignment(locale), isLocaleRTL(locale) && '0.6rem !important']]]) + " " + "PageWrapper"
-  }, /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React$2.createElement("div", {
     className: style.dynamic([["4085999581", [theme.type == 'light' ? config.theme.lightBackground : config.theme.darkBackground, config.theme.width, theme.layout.pageMargin, theme.type === 'dark' ? config.theme.darkBackground : config.theme.lightBackground, theme.palette.accents_4, theme.palette.code, theme.palette.code, theme.palette.accents_4, theme.palette.accents_4, theme.palette.code, theme.palette.accents_4, theme.palette.code, isLocaleRTL(locale) ? 'end' : 'start', isLocaleRTL(locale) ? 'right' : 'left', getLocaleDirection(locale), isLocaleRTL(locale) && 'absolute !important', isLocaleRTL(locale) && '2.5rem !important', getLocaleDirection(locale), getLocaleAlignment(locale), isLocaleRTL(locale) && '0.6em !important', getLocaleDirection(locale), getLocaleAlignment(locale), isLocaleRTL(locale) && '0.6rem !important']]]) + " " + "PageContent"
-  }, children)), /*#__PURE__*/React.createElement(style, {
+  }, children)), /*#__PURE__*/React$2.createElement(style, {
     id: "4085999581",
     dynamic: [theme.type == 'light' ? config.theme.lightBackground : config.theme.darkBackground, config.theme.width, theme.layout.pageMargin, theme.type === 'dark' ? config.theme.darkBackground : config.theme.lightBackground, theme.palette.accents_4, theme.palette.code, theme.palette.code, theme.palette.accents_4, theme.palette.accents_4, theme.palette.code, theme.palette.accents_4, theme.palette.code, isLocaleRTL(locale) ? 'end' : 'start', isLocaleRTL(locale) ? 'right' : 'left', getLocaleDirection(locale), isLocaleRTL(locale) && 'absolute !important', isLocaleRTL(locale) && '2.5rem !important', getLocaleDirection(locale), getLocaleAlignment(locale), isLocaleRTL(locale) && '0.6em !important', getLocaleDirection(locale), getLocaleAlignment(locale), isLocaleRTL(locale) && '0.6rem !important']
   }, "@font-face{font-family:'Yekan';src:url('/fonts/Yekan/Yekan.woff');}html,body{background-color:".concat(theme.type == 'light' ? config.theme.lightBackground : config.theme.darkBackground, "!important;}html,body,a,p,small,h1,h2,h3,h4,h5,h6,dd,dt,dl{font-family:'Inter','Yekan','Segoe UI','Roboto' !important;}.PageWrapper{-webkit-transform:translateY(-5px);-ms-transform:translateY(-5px);transform:translateY(-5px);}.PageContent{width:").concat(config.theme.width, ";max-width:100%;margin:0 auto;padding:0 ").concat(theme.layout.pageMargin, ";-webkit-transform:translateY(-35px);-ms-transform:translateY(-35px);transform:translateY(-35px);box-sizing:border-box;}.divider>span{background-color:").concat(theme.type === 'dark' ? config.theme.darkBackground : config.theme.lightBackground, " !important;color:").concat(theme.palette.accents_4, " !important;}.clear-icon>svg{color:").concat(theme.palette.code, " !important;}a{color:").concat(theme.palette.code, " !important;-webkit-transition:color 0.3s ease;transition:color 0.3s ease;}a:hover{color:").concat(theme.palette.accents_4, " !important;}.FooterLink{color:").concat(theme.palette.accents_4, " !important;-webkit-transition:color 0.3s ease;transition:color 0.3s ease;}.FooterLink:hover{color:").concat(theme.palette.code, " !important;}.Bread a{color:").concat(theme.palette.accents_4, " !important;-webkit-transition:color 0.3s ease;transition:color 0.3s ease;}.Bread a:hover{color:").concat(theme.palette.code, " !important;}.Bread>span{white-space:nowrap;}table{overflow:'scroll' !important;}.avanti>.item{-webkit-box-pack:").concat(isLocaleRTL(locale) ? 'end' : 'start', ";-webkit-justify-content:").concat(isLocaleRTL(locale) ? 'end' : 'start', ";-ms-flex-pack:").concat(isLocaleRTL(locale) ? 'end' : 'start', ";justify-content:").concat(isLocaleRTL(locale) ? 'end' : 'start', ";}input::-webkit-input-placeholder{text-align:").concat(isLocaleRTL(locale) ? 'right' : 'left', ";direction:").concat(getLocaleDirection(locale), " !important;}input::-moz-placeholder{text-align:").concat(isLocaleRTL(locale) ? 'right' : 'left', ";direction:").concat(getLocaleDirection(locale), " !important;}input:-ms-input-placeholder{text-align:").concat(isLocaleRTL(locale) ? 'right' : 'left', ";direction:").concat(getLocaleDirection(locale), " !important;}input::placeholder{text-align:").concat(isLocaleRTL(locale) ? 'right' : 'left', ";direction:").concat(getLocaleDirection(locale), " !important;}.collapse>.view>.title>h3{position:").concat(isLocaleRTL(locale) && 'absolute !important', ";right:").concat(isLocaleRTL(locale) && '2.5rem !important', ";direction:").concat(getLocaleDirection(locale), ";text-align:").concat(getLocaleAlignment(locale), ";}.collapse>.view{margin-bottom:").concat(isLocaleRTL(locale) && '0.6em !important', ";}.collapse>.view>.subtitle{direction:").concat(getLocaleDirection(locale), ";text-align:").concat(getLocaleAlignment(locale), ";margin-top:").concat(isLocaleRTL(locale) && '0.6rem !important', ";}")));
@@ -53366,7 +53366,7 @@ Layout.defaultProps = defaultProps;
 
 function YouTube (_ref) {
   var embedId = _ref.embedId;
-  return /*#__PURE__*/React.createElement("iframe", {
+  return /*#__PURE__*/React$2.createElement("iframe", {
     width: "100%",
     height: "500rem",
     src: "https://www.youtube.com/embed/".concat(embedId),

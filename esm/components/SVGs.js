@@ -1,3 +1,4 @@
+import React from 'react';
 export var GoogleIcon = function GoogleIcon(_ref) {
   var color = _ref.color;
   return /*#__PURE__*/React.createElement("svg", {

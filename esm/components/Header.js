@@ -3,7 +3,7 @@ import _JSXStyle from "../styled-jsx.es.js";
 import Link from 'next/link';
 import useState from 'react-usestateref';
 import { useRouter } from 'next/router';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Modal, Collapse, Input, Divider, Tabs, Text, useTheme, Drawer, ButtonGroup, Button, useToasts } from '@geist-ui/core';
 import { Sun, Moon, LogIn, User, UserPlus, ShoppingCart, Menu, Search, Mail, Lock } from '@geist-ui/icons';
 import { GoogleIcon } from './SVGs.js';

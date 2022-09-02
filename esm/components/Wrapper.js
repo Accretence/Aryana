@@ -1,4 +1,5 @@
 import _JSXStyle from "../styled-jsx.es.js";
+import React from 'react';
 import { useRouter } from 'next/router';
 import { useTheme } from '@geist-ui/core';
 import { isLocaleRTL, getLocaleDirection, getLocaleAlignment } from '../helpers/index.js';

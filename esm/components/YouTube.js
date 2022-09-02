@@ -1,3 +1,4 @@
+import React from 'react';
 export default function (_ref) {
   var embedId = _ref.embedId;
   return /*#__PURE__*/React.createElement("iframe", {

@@ -1,4 +1,5 @@
 import _JSXStyle from "../styled-jsx.es.js";
+import React from 'react';
 import Link from 'next/link';
 import { Text, Grid, useTheme, Collapse } from '@geist-ui/core';
 import { useRouter } from 'next/router';
