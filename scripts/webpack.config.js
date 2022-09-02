@@ -1,6 +1,6 @@
 const fs = require('fs-extra')
 const path = require('path')
-const componentsPath = path.join(__dirname, '../components')
+const componentsPath = path.join(__dirname)
 
 module.exports = async () => {
   const files = await fs.readdir(componentsPath)
@@ -99,7 +99,7 @@ module.exports = async () => {
       ...configs,
 
       entry: {
-        index: path.join(componentsPath, 'index.js'),
+        index: 'index.js',
       },
     },
     {
