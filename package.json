@@ -1,6 +1,6 @@
 {
   "name": "aryana",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Next.js UI layout & components built upon geist-ui.",
   "repository": {
     "type": "git",
@@ -32,8 +32,7 @@
     "build:webpack": "webpack --config scripts/webpack.config.js",
     "build:babel": "babel --no-babelrc --config-file ./scripts/babel.config.js --extensions \".js,.ts,.tsx\" ./src --out-dir ./esm --ignore \"**/__tests__/**/*,**/*.d.ts\"",
     "build:after": "node scripts/move-built-in.js",
-    "build": "npm run build:clear && npm run build:rollup && npm run build:babel && npm run build:after",
-    "release": "npm run build && npm publish"
+    "build": "npm run build:clear && npm run build:rollup && npm run build:babel && npm run build:after"
   },
   "prettier": "@geist-ui/prettier-config",
   "files": [
