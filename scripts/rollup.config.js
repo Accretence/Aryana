@@ -101,7 +101,7 @@ export default (async () => {
           input: { [name]: url },
           // output: [esmOutput, cjsOutput],
           output: [cjsOutput],
-          external,
+          external: [external, 'next/router'],
           plugins,
         }
       }),
@@ -119,7 +119,7 @@ export default (async () => {
           entryFileNames: 'index.js',
         },
       ],
-      external,
+      external: [external, 'next/router'],
       plugins,
     },
   ]
