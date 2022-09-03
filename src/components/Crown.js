@@ -2,7 +2,10 @@ import { Spacer, Text, useTheme } from '@geist-ui/core'
 
 import { getLocaleDirection } from '../helpers/index.js'
 
-export default function ({ config, i18n, large, small, router }) {
+export default function ({ essentials, large, small }) {
+    const { config, i18n, useThemeProvider, useAuth, useRouter, Link, Head } =
+        essentials
+
     const theme = useTheme()
     const smallComponent = small
 
@@ -12,7 +15,7 @@ export default function ({ config, i18n, large, small, router }) {
         pathname,
         asPath,
         query,
-    } = router
+    } = useRouter()
 
     return (
         <>

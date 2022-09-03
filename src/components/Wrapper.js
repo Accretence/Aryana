@@ -6,7 +6,10 @@ import {
     getLocaleAlignment,
 } from '../helpers/index.js'
 
-export default function ({ config, router, children }) {
+export default function ({ essentials, children }) {
+    const { config, i18n, useThemeProvider, useAuth, useRouter, Link, Head } =
+        essentials
+
     const theme = useTheme()
     const {
         locale = config.defaultLocale,
@@ -14,7 +17,7 @@ export default function ({ config, router, children }) {
         pathname,
         asPath,
         query,
-    } = router
+    } = useRouter()
 
     return (
         <>

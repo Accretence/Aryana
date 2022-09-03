@@ -38,14 +38,10 @@ import {
 import { registerHandler, loginHandler } from '../handlers/index.js'
 import { useWindowSize } from '../hooks/index.js'
 
-export default function ({
-    config,
-    i18n,
-    useThemeProvider,
-    useAuth,
-    router,
-    Link,
-}) {
+export default function ({}) {
+    const { config, i18n, useThemeProvider, useAuth, useRouter, Link, Head } =
+        essentials
+
     const theme = useTheme()
     const themeProvider = useThemeProvider()
     const { width, height } = useWindowSize()
@@ -58,7 +54,7 @@ export default function ({
         pathname,
         asPath,
         query,
-    } = router
+    } = useRouter()
 
     function getPosition(string, subString, index) {
         return string.split(subString, index).join(subString).length

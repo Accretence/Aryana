@@ -2,7 +2,10 @@ import { Text, Grid, useTheme, Collapse } from '@geist-ui/core'
 
 import { isLocaleRTL, getLocaleDirection } from '../helpers/index.js'
 
-export default function ({ config, i18n, router, Link }) {
+export default function ({ essentials }) {
+    const { config, i18n, useThemeProvider, useAuth, useRouter, Link, Head } =
+        essentials
+
     const theme = useTheme()
 
     const footer = i18n['components']['footer']
@@ -13,7 +16,7 @@ export default function ({ config, i18n, router, Link }) {
         pathname,
         asPath,
         query,
-    } = router
+    } = useRouter()
 
     const Copyright = () => (
         <div

@@ -1,19 +1,14 @@
-export default function ({
-    config,
-    i18n,
-    title,
-    description,
-    image,
-    router,
-    Head,
-}) {
+export default function ({ essentials, title, description, image }) {
+    const { config, i18n, useThemeProvider, useAuth, useRouter, Link, Head } =
+        essentials
+
     const {
         locale = config.defaultLocale,
         locales,
         pathname,
         asPath,
         query,
-    } = router
+    } = useRouter()
 
     title = title ? title : i18n['meta']['title'][locale]
     description = description

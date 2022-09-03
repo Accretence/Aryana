@@ -32,53 +32,27 @@ const defaultProps = {
 }
 
 const Layout = ({
-    config,
-    i18n,
-    useThemeProvider,
-    useAuth,
-    router,
-    Link,
-    Head,
+    essentials,
     crownLarge,
     crownSmall,
     metaTitle,
     metaDescription,
     metaImage,
     children,
-}) => {
-    return (
-        <>
-            <Helmet
-                config={config}
-                i18n={i18n}
-                title={metaTitle}
-                description={metaDescription}
-                image={metaImage}
-                router={router}
-                Head={Head}
-            />
-            <Header
-                config={config}
-                i18n={i18n}
-                useThemeProvider={useThemeProvider}
-                useAuth={useAuth}
-                router={router}
-                Link={Link}
-            />
-            <Crown
-                config={config}
-                i18n={i18n}
-                large={crownLarge}
-                small={crownSmall}
-                router={router}
-            />
-            <Wrapper config={config} router={router}>
-                {children}
-            </Wrapper>
-            <Footer config={config} i18n={i18n} router={router} Link={Link} />
-        </>
-    )
-}
+}) => (
+    <>
+        <Helmet
+            essentials={essentials}
+            title={metaTitle}
+            description={metaDescription}
+            image={metaImage}
+        />
+        <Header essentials={essentials} />
+        <Crown essentials={essentials} large={crownLarge} small={crownSmall} />
+        <Wrapper essentials={essentials}>{children}</Wrapper>
+        <Footer essentials={essentials} />
+    </>
+)
 
 Layout.defaultProps = defaultProps
 
