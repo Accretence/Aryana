@@ -13,11 +13,24 @@ export default [
             {
                 file: 'dist/index.js',
                 format: 'cjs',
+                manualChunks: (id) => {
+                    if (id.includes('node_modules/styled-jsx')) {
+                        return 'styled-jsx.cjs'
+                    }
+                },
             },
             {
                 file: 'dist/index.es.js',
                 format: 'es',
                 exports: 'named',
+                manualChunks: (id) => {
+                    if (id.includes('node_modules/styled-jsx/server')) {
+                        return 'styled-jsx-server.es'
+                    }
+                    if (id.includes('node_modules/styled-jsx')) {
+                        return 'styled-jsx.es'
+                    }
+                },
             },
         ],
         plugins: [
@@ -44,7 +57,7 @@ export default [
                 babelHelpers: 'bundled',
             }),
             external(),
-            terser(),
+            // terser(),
         ],
     },
 ]
