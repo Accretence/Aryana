@@ -1,4 +1,4 @@
-export default function ({ redirect_uri, client_id }) {
+export default function (redirect_uri, client_id) {
     const rootUrl = 'https://accounts.google.com/o/oauth2/v2/auth'
 
     const options = {
