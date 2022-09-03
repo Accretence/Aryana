@@ -46,7 +46,7 @@ export default [
                 babelHelpers: 'inline',
             }),
             external(),
-            // terser(),
+            terser(),
         ],
     },
 ]

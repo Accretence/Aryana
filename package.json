@@ -1,8 +1,8 @@
 {
     "name": "aryana",
-    "version": "0.0.22",
+    "version": "0.1.0",
     "author": "@accretence",
-    "description": "Extremely opinionated Next.js UI layout & components built using geist-ui.",
+    "description": "Extremely opinionated Next.js UI layout & components library built using geist-ui.",
     "license": "MIT",
     "keywords": [
         "next.js",
@@ -29,9 +29,6 @@
         "build": "npm run build:clear && npm run build:rollup"
     },
     "devDependencies": {
-        "@babel/plugin-proposal-object-rest-spread": "^7.18.9",
-        "@babel/plugin-transform-runtime": "^7.18.10",
-        "@babel/preset-env": "^7.18.10",
         "@babel/preset-react": "^7.18.6",
         "@geist-ui/core": "^2.3.8",
         "@geist-ui/icons": "^1.0.2",
@@ -40,8 +37,6 @@
         "@rollup/plugin-node-resolve": "^13.3.0",
         "@rollup/plugin-replace": "^4.0.0",
         "babel-plugin-macros": "^3.1.0",
-        "babel-plugin-transform-rename-import": "^2.3.0",
-        "fs-extra": "^10.1.0",
         "react": "^18.2.0",
         "react-usestateref": "^1.0.8",
         "rollup": "^2.79.0",
