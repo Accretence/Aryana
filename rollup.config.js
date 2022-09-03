@@ -37,7 +37,6 @@ export default [
                 babelHelpers: 'bundled',
             }),
             external(),
-            terser(),
         ],
     },
 ]

@@ -1,5 +1,3 @@
-import React from 'react'
-
 import Crown from './Crown.js'
 import Footer from './Footer.js'
 import Header from './Header.js'
@@ -41,6 +39,8 @@ const Layout = ({
     useThemeProvider,
     useAuth,
     router,
+    Link,
+    Head,
     crownLarge,
     crownSmall,
     metaTitle,
@@ -57,6 +57,7 @@ const Layout = ({
                 image={metaImage}
                 description={metaDescription}
                 router={router}
+                Head={Head}
             />
             <Header
                 config={config}
@@ -64,6 +65,7 @@ const Layout = ({
                 useThemeProvider={useThemeProvider}
                 useAuth={useAuth}
                 router={router}
+                Link={Link}
             />
             <Crown
                 config={config}
@@ -75,7 +77,7 @@ const Layout = ({
             <Wrapper config={config} router={router}>
                 {children}
             </Wrapper>
-            <Footer config={config} i18n={i18n} router={router} />
+            <Footer config={config} i18n={i18n} router={router} Link={Link} />
         </>
     )
 }

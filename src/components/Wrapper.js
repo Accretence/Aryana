@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { useTheme } from '@geist-ui/core'
 
 import {

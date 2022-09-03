@@ -1,233 +1,200 @@
-import axios from 'axios'
-
 import { burnToast } from '../helpers/index.js'
 
 export async function loginHandler({
-  config,
-  setLoading,
-  setToast,
-  setLocalAuthentication,
-  router,
-  refEmail,
-  refPassword,
-  toast,
+    response,
+    setLoading,
+    setToast,
+    setLocalAuthentication,
+    router,
+    toast,
 }) {
-  setLoading(true)
+    setLoading(true)
 
-  try {
-    const response = await axios.post(
-      config.backend.routes.login,
-      {
-        email: refEmail.current,
-        password: refPassword.current,
-      },
-      config.backend.axios.simple,
-    )
-
-    if (response && response.status && response.status == 200) {
-      burnToast(setToast, toast)
-      setLocalAuthentication(true)
-      router.replace('/user')
+    try {
+        if (response && response.status && response.status == 200) {
+            burnToast(setToast, toast)
+            setLocalAuthentication(true)
+            router.replace('/user')
+        }
+    } catch (error) {
+        setLoading(false)
+        burnToast(
+            setToast,
+            error && error.response && error.response.data
+                ? error.response.data
+                : 'Error'
+        )
     }
-  } catch (error) {
-    setLoading(false)
-    burnToast(
-      setToast,
-      error && error.response && error.response.data ? error.response.data : 'Error',
-    )
-  }
 }
 
 export async function registerHandler({
-  config,
-  setLoading,
-  setToast,
-  setLocalAuthentication,
-  router,
-  refEmail,
-  refPassword,
+    response,
+    setLoading,
+    setToast,
+    setLocalAuthentication,
+    router,
 }) {
-  setLoading(true)
+    setLoading(true)
 
-  try {
-    const response = await axios.post(
-      config.backend.routes.register,
-      {
-        email: refEmail.current,
-        password: refPassword.current,
-      },
-      config.backend.axios.simple,
-    )
-
-    if (response && response.status && response.status == 200) {
-      setLocalAuthentication(true)
-      router.replace('/user')
+    try {
+        if (response && response.status && response.status == 200) {
+            setLocalAuthentication(true)
+            router.replace('/user')
+        }
+    } catch (error) {
+        setLoading(false)
+        burnToast(
+            setToast,
+            error && error.response && error.response.data
+                ? error.response.data
+                : 'Error'
+        )
     }
-  } catch (error) {
-    setLoading(false)
-    burnToast(
-      setToast,
-      error && error.response && error.response.data ? error.response.data : 'Error',
-    )
-  }
 }
 
 export async function verifyHandler({
-  config,
-  setLoading,
-  setToast,
-  router,
-  refCode,
-  toast,
+    response,
+    setLoading,
+    setToast,
+    router,
+    toast,
 }) {
-  setLoading(true)
+    setLoading(true)
 
-  try {
-    const response = await axios.post(
-      config.backend.routes.verify,
-      {
-        code: refCode.current,
-      },
-      config.backend.axios.simple,
-    )
-
-    if (response && response.status && response.status == 200) {
-      burnToast(setToast, toast)
-      router.replace('/')
+    try {
+        if (response && response.status && response.status == 200) {
+            burnToast(setToast, toast)
+            router.replace('/')
+        }
+    } catch (error) {
+        setLoading(false)
+        burnToast(
+            setToast,
+            error && error.response && error.response.data
+                ? error.response.data
+                : 'Error'
+        )
     }
-  } catch (error) {
-    setLoading(false)
-    burnToast(
-      setToast,
-      error && error.response && error.response.data ? error.response.data : 'Error',
-    )
-  }
 }
 
 export async function logoutHandler({
-  config,
-  setToast,
-  setLocalAuthentication,
-  router,
-  toast,
+    response,
+    setToast,
+    setLocalAuthentication,
+    router,
+    toast,
 }) {
-  try {
-    const response = await axios.post(config.backend.routes.logout)
-
-    if (response && response.status && response.status == 200) {
-      setLocalAuthentication(false)
-      router.replace('/')
-      burnToast(setToast, toast)
+    try {
+        if (response && response.status && response.status == 200) {
+            setLocalAuthentication(false)
+            router.replace('/')
+            burnToast(setToast, toast)
+        }
+    } catch (error) {
+        burnToast(
+            setToast,
+            error && error.response && error.response.data
+                ? error.response.data
+                : 'Error'
+        )
     }
-  } catch (error) {
-    burnToast(
-      setToast,
-      error && error.response && error.response.data ? error.response.data : 'Error',
-    )
-  }
 }
 
-export async function unsubscribeHandler(config, setLoading, setToast, toast) {
-  setLoading(true)
+export async function unsubscribeHandler({
+    response,
+    setLoading,
+    setToast,
+    toast,
+}) {
+    setLoading(true)
 
-  try {
-    const response = await axios.post(config.backend.routes.unsubscribe)
-
-    if (response && response.status && response.status == 200) {
-      router.replace('/')
-      burnToast(setToast, toast)
+    try {
+        if (response && response.status && response.status == 200) {
+            router.replace('/')
+            burnToast(setToast, toast)
+        }
+    } catch (error) {
+        setLoading(false)
+        burnToast(
+            setToast,
+            error && error.response && error.response.data
+                ? error.response.data
+                : 'Error'
+        )
     }
-  } catch (error) {
-    setLoading(false)
-    burnToast(
-      setToast,
-      error && error.response && error.response.data ? error.response.data : 'Error',
-    )
-  }
 }
 
-export async function subscribeHandler(config, setLoading, setToast, toast) {
-  setLoading(true)
+export async function subscribeHandler({
+    response,
+    setLoading,
+    setToast,
+    toast,
+}) {
+    setLoading(true)
 
-  try {
-    const response = await axios.post(config.backend.routes.subscribe)
-
-    if (response && response.status && response.status == 200) {
-      router.replace('/')
-      burnToast(setToast, toast)
+    try {
+        if (response && response.status && response.status == 200) {
+            router.replace('/')
+            burnToast(setToast, toast)
+        }
+    } catch (error) {
+        setLoading(false)
+        burnToast(
+            setToast,
+            error && error.response && error.response.data
+                ? error.response.data
+                : 'Error'
+        )
     }
-  } catch (error) {
-    setLoading(false)
-    burnToast(
-      setToast,
-      error && error.response && error.response.data ? error.response.data : 'Error',
-    )
-  }
 }
 
-export async function forgotHandler(
-  config,
-  refEmail,
-  setLoading,
-  setToast,
-  setNextStage,
-  toast,
-) {
-  setLoading(true)
+export async function forgotHandler({
+    response,
+    setLoading,
+    setToast,
+    setNextStage,
+    toast,
+}) {
+    setLoading(true)
 
-  try {
-    const response = await axios.post(
-      config.backend.routes.forgot,
-      {
-        email: refEmail.current,
-      },
-      config.backend.axios.simple,
-    )
-
-    if (response && response.status && response.status == 200) {
-      setLoading(false)
-      setNextStage(true)
-      burnToast(setToast, toast)
+    try {
+        if (response && response.status && response.status == 200) {
+            setLoading(false)
+            setNextStage(true)
+            burnToast(setToast, toast)
+        }
+    } catch (error) {
+        setLoading(false)
+        burnToast(
+            setToast,
+            error && error.response && error.response.data
+                ? error.response.data
+                : 'Error'
+        )
     }
-  } catch (error) {
-    setLoading(false)
-    burnToast(
-      setToast,
-      error && error.response && error.response.data ? error.response.data : 'Error',
-    )
-  }
 }
 
-export async function resetHandler(
-  config,
-  refCode,
-  refPassword,
-  setLoading,
-  setToast,
-  router,
-  toast,
-) {
-  setLoading(true)
+export async function resetHandler({
+    response,
+    setLoading,
+    setToast,
+    router,
+    toast,
+}) {
+    setLoading(true)
 
-  try {
-    const response = await axios.post(
-      config.backend.routes.reset,
-      {
-        code: refCode.current,
-        password: refPassword.current,
-      },
-      config.backend.axios.simple,
-    )
-
-    if (response && response.status && response.status == 200) {
-      router.replace('/')
-      burnToast(setToast, toast)
+    try {
+        if (response && response.status && response.status == 200) {
+            router.replace('/')
+            burnToast(setToast, toast)
+        }
+    } catch (error) {
+        setLoading(false)
+        burnToast(
+            setToast,
+            error && error.response && error.response.data
+                ? error.response.data
+                : 'Error'
+        )
     }
-  } catch (error) {
-    setLoading(false)
-    burnToast(
-      setToast,
-      error && error.response && error.response.data ? error.response.data : 'Error',
-    )
-  }
 }

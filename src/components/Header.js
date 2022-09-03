@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import useState from 'react-usestateref'
 import React, { useEffect } from 'react'
 import {
@@ -38,7 +37,14 @@ import {
 import { registerHandler, loginHandler } from '../handlers/index.js'
 import { useWindowSize } from '../hooks/index.js'
 
-export default function ({ config, i18n, useThemeProvider, useAuth, router }) {
+export default function ({
+    config,
+    i18n,
+    useThemeProvider,
+    useAuth,
+    router,
+    Link,
+}) {
     const theme = useTheme()
     const themeProvider = useThemeProvider()
     const { width, height } = useWindowSize()

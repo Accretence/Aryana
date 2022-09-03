@@ -1,4 +1,3 @@
-import React from 'react'
 import { Spacer, Text, useTheme } from '@geist-ui/core'
 
 import { getLocaleDirection } from '../helpers/index.js'

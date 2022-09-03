@@ -1,7 +1,12 @@
-import React from 'react'
-import Head from 'next/head'
-
-export default function ({ config, i18n, title, description, image, router }) {
+export default function ({
+    config,
+    i18n,
+    title,
+    description,
+    image,
+    router,
+    Head,
+}) {
     const {
         locale = config.defaultLocale,
         locales,

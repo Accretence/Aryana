@@ -1,10 +1,8 @@
-import React from 'react'
-import Link from 'next/link'
 import { Text, Grid, useTheme, Collapse } from '@geist-ui/core'
 
 import { isLocaleRTL, getLocaleDirection } from '../helpers/index.js'
 
-export default function ({ config, i18n, router }) {
+export default function ({ config, i18n, router, Link }) {
     const theme = useTheme()
 
     const footer = i18n['components']['footer']
@@ -59,6 +57,7 @@ export default function ({ config, i18n, router }) {
                                     config={config}
                                     footer={footer}
                                     locale={locale}
+                                    Link={Link}
                                 />
                             </Grid>
                             <Grid xs={0} md={24}>
@@ -66,6 +65,7 @@ export default function ({ config, i18n, router }) {
                                     config={config}
                                     footer={footer}
                                     locale={locale}
+                                    Link={Link}
                                 />
                             </Grid>
                             <Grid xs={24} md={0}>
@@ -94,7 +94,7 @@ export default function ({ config, i18n, router }) {
     )
 }
 
-function Desktop({ config, footer, locale }) {
+function Desktop({ config, footer, locale, Link }) {
     return (
         <Grid.Container gap={1} my={2}>
             {isLocaleRTL(locale) ? (
@@ -103,6 +103,7 @@ function Desktop({ config, footer, locale }) {
                         config={config}
                         footer={footer}
                         locale={locale}
+                        Link={Link}
                     />
                     <Grid
                         px={0}
@@ -162,7 +163,7 @@ function Desktop({ config, footer, locale }) {
     )
 }
 
-function DesktopLinks({ config, footer, locale }) {
+function DesktopLinks({ config, footer, locale, Link }) {
     return (
         <>
             <>
@@ -224,17 +225,22 @@ function DesktopLinks({ config, footer, locale }) {
     )
 }
 
-function Mobile({ config, footer, locale }) {
+function Mobile({ config, footer, locale, Link }) {
     return (
         <>
             <Collapse.Group width="100%" mt={1} mb={2}>
-                <MobileLinks config={config} footer={footer} locale={locale} />
+                <MobileLinks
+                    config={config}
+                    footer={footer}
+                    locale={locale}
+                    Link={Link}
+                />
             </Collapse.Group>
         </>
     )
 }
 
-function MobileLinks({ config, footer, locale }) {
+function MobileLinks({ config, footer, locale, Link }) {
     const theme = useTheme()
 
     return (

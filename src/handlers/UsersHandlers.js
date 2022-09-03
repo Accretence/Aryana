@@ -1,51 +1,53 @@
-import Link from 'next/link'
 import { Link as LinkIcon } from '@geist-ui/icons'
 
 import { burnToast } from '../helpers/index.js'
 
 export async function handleUserData({
-  response,
-  router,
-  setUser,
-  setToast,
-  noDataToast,
-  notVerifiedToast,
+    response,
+    router,
+    setUser,
+    setToast,
+    noDataToast,
+    notVerifiedToast,
+    Link,
 }) {
-  const { data, error } = response
+    const { data, error } = response
 
-  if (error) {
-    router.replace('/')
-    burnToast(
-      setToast,
-      error && error.response && error.response.data ? error.response.data : 'Error',
-    )
-  }
-
-  if (!data) {
-    router.replace('/')
-    burnToast(setToast, noDataToast)
-  }
-
-  if (!data.isEmailVerified) {
-    router.replace('/auth/verify')
-    burnToast(setToast, notVerifiedToast)
-  }
-
-  const orders = data.orders
-  const pOrders = orders.map(order => {
-    return {
-      ...order,
-      link: (
-        <Link href={`/order/${order.id}`}>
-          <a>
-            {`Order #${order.index}`} {'  '} <LinkIcon size={12} />
-          </a>
-        </Link>
-      ),
+    if (error) {
+        router.replace('/')
+        burnToast(
+            setToast,
+            error && error.response && error.response.data
+                ? error.response.data
+                : 'Error'
+        )
     }
-  })
 
-  data.orders = pOrders
+    if (!data) {
+        router.replace('/')
+        burnToast(setToast, noDataToast)
+    }
 
-  setUser(data)
+    if (!data.isEmailVerified) {
+        router.replace('/auth/verify')
+        burnToast(setToast, notVerifiedToast)
+    }
+
+    const orders = data.orders
+    const pOrders = orders.map((order) => {
+        return {
+            ...order,
+            link: (
+                <Link href={`/order/${order.id}`}>
+                    <a>
+                        {`Order #${order.index}`} {'  '} <LinkIcon size={12} />
+                    </a>
+                </Link>
+            ),
+        }
+    })
+
+    data.orders = pOrders
+
+    setUser(data)
 }
