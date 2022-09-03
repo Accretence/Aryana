@@ -15,24 +15,11 @@ export default [
                 format: 'cjs',
                 exports: 'named',
                 sourcemap: false,
-                manualChunks: (id) => {
-                    if (id.includes('node_modules/styled-jsx')) {
-                        return 'styled-jsx.cjs'
-                    }
-                },
             },
             {
                 file: 'dist/index.es.js',
                 format: 'es',
                 exports: 'named',
-                manualChunks: (id) => {
-                    if (id.includes('node_modules/styled-jsx/server')) {
-                        return 'styled-jsx-server.es'
-                    }
-                    if (id.includes('node_modules/styled-jsx')) {
-                        return 'styled-jsx.es'
-                    }
-                },
             },
         ],
         plugins: [
@@ -56,7 +43,7 @@ export default [
                     ],
                 ],
                 plugins: ['styled-jsx/babel'],
-                babelHelpers: 'runtime',
+                babelHelpers: 'inline',
             }),
             external(),
             // terser(),

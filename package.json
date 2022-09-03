@@ -1,6 +1,6 @@
 {
     "name": "aryana",
-    "version": "0.0.18",
+    "version": "0.0.19",
     "author": "@accretence",
     "description": "Extremely opinionated Next.js UI layout & components built using geist-ui.",
     "license": "MIT",
@@ -26,8 +26,7 @@
         "update": "npx npm-check-updates -u",
         "build:clear": "rm -rf ./dist",
         "build:rollup": "rollup -c",
-        "build:after": "node scripts/move-built-in.js",
-        "build": "npm run build:clear && npm run build:rollup && npm run build:after"
+        "build": "npm run build:clear && npm run build:rollup"
     },
     "devDependencies": {
         "@babel/plugin-proposal-object-rest-spread": "^7.18.9",
@@ -54,6 +53,7 @@
     "peerDependencies": {
         "@geist-ui/core": "^2.3.8",
         "next": "^12.2.5",
-        "react": "^18.2.0"
+        "react": "^18.2.0",
+        "styled-jsx": "^5.0.5"
     }
 }
