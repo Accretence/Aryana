@@ -7,66 +7,77 @@ import Helmet from './Helmet.js'
 import Wrapper from './Wrapper.js'
 
 const defaultProps = {
-  useThemeProvider: null,
-  useAuth: null,
-  config: {
-    theme: {
-      width: '900pt',
+    useThemeProvider: null,
+    useAuth: null,
+    config: {
+        theme: {
+            width: '900pt',
+        },
+        meta: {
+            title: 'NEXT-DASHBOARD-ABSTRACTION',
+            image: 'https://i.imgur.com/NitQE9d.jpg',
+            url: 'https://example.com',
+            handle: '@example',
+            keywords: 'geist-ui, nextjs, reactjs',
+        },
+        links: {
+            email: 'mailto:example@example.com',
+            twitter: 'https://twitter.com/example',
+            linkedin: 'https://linkedin.com/in/example',
+            github: 'https://github.com/example',
+        },
+        tabs: [
+            {
+                label: 'CONTACT',
+                value: '/contact',
+            },
+        ],
     },
-    meta: {
-      title: 'NEXT-DASHBOARD-ABSTRACTION',
-      image: 'https://i.imgur.com/NitQE9d.jpg',
-      url: 'https://example.com',
-      handle: '@example',
-      keywords: 'geist-ui, nextjs, reactjs',
-    },
-    links: {
-      email: 'mailto:example@example.com',
-      twitter: 'https://twitter.com/example',
-      linkedin: 'https://linkedin.com/in/example',
-      github: 'https://github.com/example',
-    },
-    tabs: [
-      {
-        label: 'CONTACT',
-        value: '/contact',
-      },
-    ],
-  },
 }
 
 const Layout = ({
-  config,
-  i18n,
-  useThemeProvider,
-  useAuth,
-  crownLarge,
-  crownSmall,
-  metaTitle,
-  metaDescription,
-  metaImage,
-  children,
+    config,
+    i18n,
+    useThemeProvider,
+    useAuth,
+    router,
+    crownLarge,
+    crownSmall,
+    metaTitle,
+    metaDescription,
+    metaImage,
+    children,
 }) => {
-  return (
-    <>
-      <Helmet
-        config={config}
-        i18n={i18n}
-        title={metaTitle}
-        image={metaImage}
-        description={metaDescription}
-      />
-      <Header
-        config={config}
-        i18n={i18n}
-        useThemeProvider={useThemeProvider}
-        useAuth={useAuth}
-      />
-      <Crown config={config} i18n={i18n} large={crownLarge} small={crownSmall} />
-      <Wrapper config={config}>{children}</Wrapper>
-      <Footer config={config} i18n={i18n} />
-    </>
-  )
+    return (
+        <>
+            <Helmet
+                config={config}
+                i18n={i18n}
+                title={metaTitle}
+                image={metaImage}
+                description={metaDescription}
+                router={router}
+            />
+            <Header
+                config={config}
+                i18n={i18n}
+                useThemeProvider={useThemeProvider}
+                useAuth={useAuth}
+                router={router}
+            />
+            <Crown
+                config={config}
+                i18n={i18n}
+                large={crownLarge}
+                small={crownSmall}
+                router={router}
+            />
+            <Wrapper config={config} router={router}>
+                {children}
+            </Wrapper>
+            <Footer config={config} i18n={i18n} router={router} />
+        </>
+    )
 }
 
 Layout.defaultProps = defaultProps
