@@ -5,8 +5,6 @@ import Helmet from './Helmet.js'
 import Wrapper from './Wrapper.js'
 
 const defaultProps = {
-    useThemeProvider: null,
-    useAuth: null,
     config: {
         theme: {
             width: '900pt',
@@ -54,8 +52,8 @@ const Layout = ({
                 config={config}
                 i18n={i18n}
                 title={metaTitle}
-                image={metaImage}
                 description={metaDescription}
+                image={metaImage}
                 router={router}
                 Head={Head}
             />

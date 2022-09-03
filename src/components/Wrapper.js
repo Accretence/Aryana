@@ -6,7 +6,7 @@ import {
     getLocaleAlignment,
 } from '../helpers/index.js'
 
-export default function ({ config, children, router }) {
+export default function ({ config, router, children }) {
     const theme = useTheme()
     const {
         locale = config.defaultLocale,
@@ -28,28 +28,6 @@ export default function ({ config, children, router }) {
                         background-color: ${theme.type == 'light'
                             ? config.theme.lightBackground
                             : config.theme.darkBackground}!important;
-                    }
-
-                    @font-face {
-                        font-family: 'Yekan';
-                        src: url('/fonts/Yekan/Yekan.woff');
-                    }
-
-                    html,
-                    body,
-                    a,
-                    p,
-                    small,
-                    h1,
-                    h2,
-                    h3,
-                    h4,
-                    h5,
-                    h6,
-                    dd,
-                    dt,
-                    dl {
-                        font-family: 'Inter', 'Yekan', 'Segoe UI', 'Roboto' !important;
                     }
 
                     .PageWrapper {

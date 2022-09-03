@@ -46,56 +46,7 @@ export default function ({ config, i18n, router, Link }) {
         </div>
     )
 
-    return (
-        <>
-            {footer && (
-                <footer>
-                    <div className="FooterWrapper">
-                        <Grid.Container>
-                            <Grid xs={24} md={0}>
-                                <Mobile
-                                    config={config}
-                                    footer={footer}
-                                    locale={locale}
-                                    Link={Link}
-                                />
-                            </Grid>
-                            <Grid xs={0} md={24}>
-                                <Desktop
-                                    config={config}
-                                    footer={footer}
-                                    locale={locale}
-                                    Link={Link}
-                                />
-                            </Grid>
-                            <Grid xs={24} md={0}>
-                                <Copyright />
-                            </Grid>
-                        </Grid.Container>
-                    </div>
-                </footer>
-            )}
-            <style jsx global>
-                {`
-                    footer {
-                        border-top: 1px solid ${theme.palette.border};
-                    }
-                    .FooterWrapper {
-                        width: ${config.theme.width};
-                        max-width: 100%;
-                        margin: 0 auto;
-                        padding: 0 ${theme.layout.pageMargin};
-                        vertical-align: text-top;
-                        box-sizing: border-box;
-                    }
-                `}
-            </style>
-        </>
-    )
-}
-
-function Desktop({ config, footer, locale, Link }) {
-    return (
+    const Desktop = () => (
         <Grid.Container gap={1} my={2}>
             {isLocaleRTL(locale) ? (
                 <>
@@ -161,10 +112,8 @@ function Desktop({ config, footer, locale, Link }) {
             )}
         </Grid.Container>
     )
-}
 
-function DesktopLinks({ config, footer, locale, Link }) {
-    return (
+    const DesktopLinks = () => (
         <>
             <>
                 {footer &&
@@ -223,10 +172,8 @@ function DesktopLinks({ config, footer, locale, Link }) {
             </style>
         </>
     )
-}
 
-function Mobile({ config, footer, locale, Link }) {
-    return (
+    const Mobile = () => (
         <>
             <Collapse.Group width="100%" mt={1} mb={2}>
                 <MobileLinks
@@ -238,12 +185,8 @@ function Mobile({ config, footer, locale, Link }) {
             </Collapse.Group>
         </>
     )
-}
 
-function MobileLinks({ config, footer, locale, Link }) {
-    const theme = useTheme()
-
-    return (
+    const MobileLinks = () => (
         <>
             <>
                 {footer &&
@@ -309,6 +252,53 @@ function MobileLinks({ config, footer, locale, Link }) {
                     }
                     .collapse {
                         border-top: none !important;
+                    }
+                `}
+            </style>
+        </>
+    )
+
+    return (
+        <>
+            {footer && (
+                <footer>
+                    <div className="FooterWrapper">
+                        <Grid.Container>
+                            <Grid xs={24} md={0}>
+                                <Mobile
+                                    config={config}
+                                    footer={footer}
+                                    locale={locale}
+                                    Link={Link}
+                                />
+                            </Grid>
+                            <Grid xs={0} md={24}>
+                                <Desktop
+                                    config={config}
+                                    footer={footer}
+                                    locale={locale}
+                                    Link={Link}
+                                />
+                            </Grid>
+                            <Grid xs={24} md={0}>
+                                <Copyright />
+                            </Grid>
+                        </Grid.Container>
+                    </div>
+                </footer>
+            )}
+            <style jsx global>
+                {`
+                    footer {
+                        border-top: 1px solid ${theme.palette.border};
+                    }
+                    .FooterWrapper {
+                        width: ${config.theme.width};
+                        max-width: 100%;
+                        margin: 0 auto;
+                        padding: 0 ${theme.layout.pageMargin};
+                        vertical-align: text-top;
+                        box-sizing: border-box;
                     }
                 `}
             </style>
