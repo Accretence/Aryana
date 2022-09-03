@@ -13,6 +13,8 @@ export default [
             {
                 file: 'dist/index.js',
                 format: 'cjs',
+                exports: 'named',
+                sourcemap: false,
                 manualChunks: (id) => {
                     if (id.includes('node_modules/styled-jsx')) {
                         return 'styled-jsx.cjs'
@@ -54,7 +56,7 @@ export default [
                     ],
                 ],
                 plugins: ['styled-jsx/babel'],
-                babelHelpers: 'bundled',
+                babelHelpers: 'runtime',
             }),
             external(),
             // terser(),
