@@ -14,6 +14,7 @@ import {
     useToasts,
 } from '@geist-ui/core'
 import {
+    Globe,
     Sun,
     Moon,
     LogIn,

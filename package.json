@@ -1,6 +1,6 @@
 {
     "name": "aryana",
-    "version": "0.0.19",
+    "version": "0.0.20",
     "author": "@accretence",
     "description": "Extremely opinionated Next.js UI layout & components built using geist-ui.",
     "license": "MIT",
@@ -52,6 +52,7 @@
     },
     "peerDependencies": {
         "@geist-ui/core": "^2.3.8",
+        "@geist-ui/icons": "^1.0.2",
         "next": "^12.2.5",
         "react": "^18.2.0",
         "styled-jsx": "^5.0.5"
