@@ -1,6 +1,6 @@
 {
     "name": "aryana",
-    "version": "0.0.14",
+    "version": "0.0.15",
     "author": "@accretence",
     "description": "Extremely opinionated Next.js UI layout & components built using geist-ui.",
     "license": "MIT",
@@ -19,6 +19,9 @@
     "homepage": "https://github.com/Accretence/Aryana#readme",
     "main": "dist/index.js",
     "module": "dist/index.es.js",
+    "files": [
+        "/dist"
+    ],
     "scripts": {
         "update": "npx npm-check-updates -u",
         "build:clear": "rm -rf ./dist",

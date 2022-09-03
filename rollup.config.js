@@ -32,11 +32,19 @@ export default [
             }),
             babel({
                 exclude: 'node_modules/**',
-                presets: ['@babel/preset-react'],
+                presets: [
+                    [
+                        '@babel/preset-react',
+                        {
+                            runtime: 'automatic',
+                        },
+                    ],
+                ],
                 plugins: ['styled-jsx/babel'],
                 babelHelpers: 'bundled',
             }),
             external(),
+            terser(),
         ],
     },
 ]
