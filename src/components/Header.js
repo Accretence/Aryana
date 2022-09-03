@@ -38,7 +38,7 @@ import {
 import { registerHandler, loginHandler } from '../handlers/index.js'
 import { useWindowSize } from '../hooks/index.js'
 
-export default function ({}) {
+export default function ({ essentials }) {
     const { config, i18n, useThemeProvider, useAuth, useRouter, Link, Head } =
         essentials
 
