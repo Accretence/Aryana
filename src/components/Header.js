@@ -48,13 +48,15 @@ export default function ({ essentials }) {
     const { setToast } = useToasts()
     const { isAuthenticated, setLocalAuthentication } = useAuth()
 
+    const router = useRouter()
+
     const {
         locale = config.defaultLocale,
         locales,
         pathname,
         asPath,
         query,
-    } = useRouter()
+    } = router
 
     function getPosition(string, subString, index) {
         return string.split(subString, index).join(subString).length
