@@ -1,12 +1,13 @@
 {
     "name": "aryana",
-    "version": "0.0.12",
+    "version": "0.0.13",
     "author": "@accretence",
     "description": "Extremely opinionated Next.js UI layout & components built using geist-ui.",
     "license": "MIT",
     "keywords": [
         "next.js",
-        "geist-ui"
+        "geist-ui",
+        "rollup"
     ],
     "repository": {
         "type": "git",
@@ -20,25 +21,28 @@
     "module": "dist/index.es.js",
     "scripts": {
         "update": "npx npm-check-updates -u",
-        "build": "rollup -c"
+        "build:clear": "rm -rf ./dist",
+        "build:rollup": "rollup -c",
+        "build:after": "node scripts/move-built-in.js",
+        "build": "npm run build:clear && npm run build:rollup && npm run build:after"
     },
     "devDependencies": {
         "@babel/cli": "^7.18.10",
         "@babel/preset-react": "^7.18.6",
         "@geist-ui/core": "^2.3.8",
         "@geist-ui/icons": "^1.0.2",
+        "@rollup/plugin-babel": "^5.3.1",
         "@rollup/plugin-commonjs": "^22.0.2",
         "@rollup/plugin-node-resolve": "^13.3.0",
         "@rollup/plugin-replace": "^4.0.0",
         "axios": "^0.27.2",
         "babel-plugin-macros": "^3.1.0",
+        "fs-extra": "^10.1.0",
         "next": "^12.2.5",
         "react": "^18.0.18",
         "react-dom": "^18.2.0",
-        "react-is": "^18.2.0",
         "react-usestateref": "^1.0.8",
         "rollup": "^2.79.0",
-        "rollup-plugin-babel": "^4.4.0",
         "rollup-plugin-node-polyfills": "^0.2.1",
         "rollup-plugin-peer-deps-external": "^2.2.4",
         "rollup-plugin-terser": "^7.0.2",
