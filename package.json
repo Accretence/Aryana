@@ -1,6 +1,6 @@
 {
     "name": "aryana",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "author": "@accretence",
     "description": "Extremely opinionated Next.js UI layout & components library built using geist-ui.",
     "license": "MIT",

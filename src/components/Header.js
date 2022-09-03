@@ -27,7 +27,7 @@ import {
     Lock,
 } from '@geist-ui/icons'
 
-import { GoogleIcon } from './SVGs.js'
+import { GoogleIcon } from '../icons/index.js'
 
 import {
     getGoogleURL,
