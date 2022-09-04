@@ -10,6 +10,7 @@ export async function handleUserData({
     noDataToast,
     notVerifiedToast,
     Link,
+    notVerifiedRedirectURI,
 }) {
     const { data, error } = response
 
@@ -29,7 +30,7 @@ export async function handleUserData({
     }
 
     if (!data.isEmailVerified) {
-        router.replace('/auth/verify')
+        router.replace(notVerifiedRedirectURI)
         burnToast(setToast, notVerifiedToast)
     }
 

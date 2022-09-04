@@ -7,6 +7,7 @@ export async function loginHandler({
     setLocalAuthentication,
     router,
     toast,
+    redirect_uri,
 }) {
     try {
         setLoading(true)
@@ -14,7 +15,7 @@ export async function loginHandler({
         if (response && response.status && response.status == 200) {
             burnToast(setToast, toast)
             setLocalAuthentication(true)
-            router.replace('/user')
+            router.replace(redirect_uri)
         }
     } catch (error) {
         setLoading(false)
@@ -33,13 +34,14 @@ export async function registerHandler({
     setToast,
     setLocalAuthentication,
     router,
+    redirect_uri,
 }) {
     try {
         setLoading(true)
 
         if (response && response.status && response.status == 200) {
             setLocalAuthentication(true)
-            router.replace('/user')
+            router.replace(redirect_uri)
         }
     } catch (error) {
         setLoading(false)
@@ -58,13 +60,14 @@ export async function verifyHandler({
     setToast,
     router,
     toast,
+    redirect_uri,
 }) {
     try {
         setLoading(true)
 
         if (response && response.status && response.status == 200) {
             burnToast(setToast, toast)
-            router.replace('/')
+            router.replace(redirect_uri)
         }
     } catch (error) {
         setLoading(false)
@@ -83,11 +86,12 @@ export async function logoutHandler({
     setLocalAuthentication,
     router,
     toast,
+    redirect_uri,
 }) {
     try {
         if (response && response.status && response.status == 200) {
             setLocalAuthentication(false)
-            router.replace('/')
+            router.replace(redirect_uri)
             burnToast(setToast, toast)
         }
     } catch (error) {
@@ -105,12 +109,14 @@ export async function unsubscribeHandler({
     setLoading,
     setToast,
     toast,
+    router,
+    redirect_uri,
 }) {
     try {
         setLoading(true)
 
         if (response && response.status && response.status == 200) {
-            router.replace('/')
+            router.replace(redirect_uri)
             burnToast(setToast, toast)
         }
     } catch (error) {
@@ -129,12 +135,14 @@ export async function subscribeHandler({
     setLoading,
     setToast,
     toast,
+    router,
+    redirect_uri,
 }) {
     try {
         setLoading(true)
 
         if (response && response.status && response.status == 200) {
-            router.replace('/')
+            router.replace(redirect_uri)
             burnToast(setToast, toast)
         }
     } catch (error) {
@@ -180,12 +188,13 @@ export async function resetHandler({
     setToast,
     router,
     toast,
+    redirect_uri,
 }) {
     try {
         setLoading(true)
 
         if (response && response.status && response.status == 200) {
-            router.replace('/')
+            router.replace(redirect_uri)
             burnToast(setToast, toast)
         }
     } catch (error) {

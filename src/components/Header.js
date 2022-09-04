@@ -286,7 +286,7 @@ export default function ({ essentials }) {
                             type="secondary"
                             style={{ border: 'none' }}
                             auto
-                            px={1.2}
+                            px={locales ? 2 : 1.2}
                         >
                             {buttons['login'][locale]}
                         </Button>
