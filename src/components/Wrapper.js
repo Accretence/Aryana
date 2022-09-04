@@ -33,6 +33,28 @@ export default function ({ essentials, children }) {
                             : config.theme.darkBackground}!important;
                     }
 
+                    @font-face {
+                        font-family: 'Yekan';
+                        src: url('/fonts/Yekan/Yekan.woff');
+                    }
+
+                    html,
+                    body,
+                    a,
+                    p,
+                    small,
+                    h1,
+                    h2,
+                    h3,
+                    h4,
+                    h5,
+                    h6,
+                    dd,
+                    dt,
+                    dl {
+                        font-family: 'Inter', 'Yekan', 'Segoe UI', 'Roboto' !important;
+                    }
+
                     .PageWrapper {
                         transform: translateY(-5px);
                     }

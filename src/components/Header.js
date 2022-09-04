@@ -7,7 +7,6 @@ import {
     Drawer,
     ButtonGroup,
     Button,
-    useToasts,
 } from '@geist-ui/core'
 import {
     Globe,
@@ -30,7 +29,6 @@ export default function ({ essentials }) {
     const theme = useTheme()
     const themeProvider = useThemeProvider()
     const { width, height } = useWindowSize()
-    const { setToast } = useToasts()
     const { isAuthenticated, setLocalAuthentication } = useAuth()
 
     const router = useRouter()
@@ -281,7 +279,7 @@ export default function ({ essentials }) {
                         </Link>
                     </>
                 ) : (
-                    <>
+                    <Link href={config.urls.login}>
                         <Button
                             icon={<LogIn />}
                             aria-label="Login Button"
@@ -292,7 +290,7 @@ export default function ({ essentials }) {
                         >
                             {buttons['login'][locale]}
                         </Button>
-                    </>
+                    </Link>
                 )}
             </div>
         </>
@@ -385,7 +383,7 @@ export default function ({ essentials }) {
                             </Link>
                         </>
                     ) : (
-                        <>
+                        <Link href={config.urls.login}>
                             <Button
                                 icon={<LogIn />}
                                 aria-label="Login Button"
@@ -394,7 +392,7 @@ export default function ({ essentials }) {
                                 width="100%"
                                 scale={1.5}
                             />
-                        </>
+                        </Link>
                     )}
                 </Drawer.Content>
             </Drawer>
