@@ -8,9 +8,9 @@ export async function loginHandler({
     router,
     toast,
 }) {
-    setLoading(true)
-
     try {
+        setLoading(true)
+
         if (response && response.status && response.status == 200) {
             burnToast(setToast, toast)
             setLocalAuthentication(true)
@@ -34,9 +34,9 @@ export async function registerHandler({
     setLocalAuthentication,
     router,
 }) {
-    setLoading(true)
-
     try {
+        setLoading(true)
+
         if (response && response.status && response.status == 200) {
             setLocalAuthentication(true)
             router.replace('/user')
@@ -59,9 +59,9 @@ export async function verifyHandler({
     router,
     toast,
 }) {
-    setLoading(true)
-
     try {
+        setLoading(true)
+
         if (response && response.status && response.status == 200) {
             burnToast(setToast, toast)
             router.replace('/')
@@ -106,9 +106,9 @@ export async function unsubscribeHandler({
     setToast,
     toast,
 }) {
-    setLoading(true)
-
     try {
+        setLoading(true)
+
         if (response && response.status && response.status == 200) {
             router.replace('/')
             burnToast(setToast, toast)
@@ -130,9 +130,9 @@ export async function subscribeHandler({
     setToast,
     toast,
 }) {
-    setLoading(true)
-
     try {
+        setLoading(true)
+
         if (response && response.status && response.status == 200) {
             router.replace('/')
             burnToast(setToast, toast)
@@ -155,9 +155,9 @@ export async function forgotHandler({
     setNextStage,
     toast,
 }) {
-    setLoading(true)
-
     try {
+        setLoading(true)
+
         if (response && response.status && response.status == 200) {
             setLoading(false)
             setNextStage(true)
@@ -181,9 +181,9 @@ export async function resetHandler({
     router,
     toast,
 }) {
-    setLoading(true)
-
     try {
+        setLoading(true)
+
         if (response && response.status && response.status == 200) {
             router.replace('/')
             burnToast(setToast, toast)

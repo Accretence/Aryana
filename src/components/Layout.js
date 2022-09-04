@@ -6,6 +6,7 @@ import Wrapper from './Wrapper.js'
 
 const defaultProps = {
     config: {
+        defaultLocale: 'en',
         theme: {
             width: '900pt',
         },
