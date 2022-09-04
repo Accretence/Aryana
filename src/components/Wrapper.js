@@ -82,6 +82,13 @@ export default function ({ essentials, children }) {
                     a:hover {
                         color: ${theme.palette.accents_4} !important;
                     }
+                    .Peculiar {
+                        color: ${theme.palette.accents_6}!important;
+                        font-size: 0.75rem;
+                    }
+                    .Peculiar:hover {
+                        color: ${theme.palette.code}!important;
+                    }
                     .FooterLink {
                         color: ${theme.palette.accents_4} !important;
                         transition: color 0.3s ease;
