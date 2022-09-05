@@ -16,6 +16,9 @@ export async function loginHandler({
             burnToast(setToast, toast)
             setLocalAuthentication(true)
             router.replace(redirect_uri)
+        } else {
+            setLoading(false)
+            burnToast(setToast, 'Failed...')
         }
     } catch (error) {
         setLoading(false)
@@ -43,6 +46,9 @@ export async function registerHandler({
 
             setLocalAuthentication(true)
             router.replace(redirect_uri)
+        } else {
+            setLoading(false)
+            burnToast(setToast, 'Failed...')
         }
     } catch (error) {
         setLoading(false)
@@ -69,6 +75,9 @@ export async function verifyHandler({
 
             burnToast(setToast, toast)
             router.replace(redirect_uri)
+        } else {
+            setLoading(false)
+            burnToast(setToast, 'Failed...')
         }
     } catch (error) {
         setLoading(false)
@@ -95,6 +104,8 @@ export async function logoutHandler({
             setLocalAuthentication(false)
             router.replace(redirect_uri)
             burnToast(setToast, toast)
+        } else {
+            burnToast(setToast, 'Failed...')
         }
     } catch (error) {
         burnToast(
@@ -120,6 +131,9 @@ export async function unsubscribeHandler({
 
             router.replace(redirect_uri)
             burnToast(setToast, toast)
+        } else {
+            setLoading(false)
+            burnToast(setToast, 'Login failed...')
         }
     } catch (error) {
         setLoading(false)
@@ -147,6 +161,9 @@ export async function subscribeHandler({
 
             router.replace(redirect_uri)
             burnToast(setToast, toast)
+        } else {
+            setLoading(false)
+            burnToast(setToast, 'Login failed...')
         }
     } catch (error) {
         setLoading(false)
@@ -172,6 +189,9 @@ export async function forgotHandler({
             setLoading(false)
             setNextStage(true)
             burnToast(setToast, toast)
+        } else {
+            setLoading(false)
+            burnToast(setToast, 'Login failed...')
         }
     } catch (error) {
         setLoading(false)
@@ -198,6 +218,9 @@ export async function resetHandler({
 
             router.replace(redirect_uri)
             burnToast(setToast, toast)
+        } else {
+            setLoading(false)
+            burnToast(setToast, 'Login failed...')
         }
     } catch (error) {
         setLoading(false)
