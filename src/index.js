@@ -34,7 +34,7 @@ import {
     YouTube,
 } from './components/index.js'
 
-import { useWindowSize } from './hooks/index.js'
+import { useTraceUpdate, useWindowSize } from './hooks/index.js'
 
 import { GoogleIcon } from './icons/index.js'
 
@@ -66,6 +66,7 @@ export {
     Layout,
     Wrapper,
     YouTube,
-    useWindowSize,
     GoogleIcon,
+    useWindowSize,
+    useTraceUpdate,
 }

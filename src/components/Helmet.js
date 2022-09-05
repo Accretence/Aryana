@@ -1,6 +1,16 @@
-export default function ({ essentials, title, description, image }) {
-    const { config, i18n, useThemeProvider, useAuth, useRouter, Link, Head } =
-        essentials
+export default function ({ essentials }) {
+    const {
+        config,
+        i18n,
+        useThemeProvider,
+        useAuth,
+        useRouter,
+        Link,
+        Head,
+        title = 'Next',
+        description = 'Next Page',
+        image = 'https://i.imgur.com/NitQE9d.jpg',
+    } = essentials
 
     const {
         locale = config.defaultLocale,
@@ -9,12 +19,6 @@ export default function ({ essentials, title, description, image }) {
         asPath,
         query,
     } = useRouter()
-
-    title = title ? title : i18n['meta']['title'][locale]
-    description = description
-        ? description
-        : i18n['meta']['description'][locale]
-    image = image ? image : config.meta.image
 
     return (
         <Head>

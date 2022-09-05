@@ -136,6 +136,9 @@ export default function ({ essentials, children }) {
                         margin-top: ${isLocaleRTL(locale) &&
                         '0.6rem !important'};
                     }
+                    .content {
+                        text-align: justify !important;
+                    }
                 `}
             </style>
         </>
