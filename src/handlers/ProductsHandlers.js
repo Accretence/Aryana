@@ -1,63 +1,69 @@
 import { burnToast } from '../helpers/index.js'
 
 export async function handleProductsData({
-  response,
-  router,
-  setPages,
-  setProducts,
-  setToast,
-  noDataToast,
+    response,
+    router,
+    setPages,
+    setProducts,
+    setToast,
+    noDataToast,
 }) {
-  const { data, error } = response
+    const { data, error } = response
 
-  if (error) {
-    router.replace('/')
-    burnToast(
-      setToast,
-      error && error.response && error.response.data ? error.response.data : 'Error',
-    )
-  }
+    if (error) {
+        router.replace('/')
+        burnToast(
+            setToast,
+            error && error.response && error.response.data
+                ? error.response.data
+                : 'Error'
+        )
+    }
 
-  const { page, pages, products } = data
+    const { page, pages, products } = data
 
-  if (!data || !products || !page || !pages) {
-    router.replace('/')
-    burnToast(setToast, noDataToast)
-  }
+    if (!data || !products || !page || !pages) {
+        router.replace('/')
+        burnToast(setToast, noDataToast)
+    }
 
-  setPages(pages)
-  setProducts(products)
+    setPages(pages)
+    setProducts(products)
 }
 
 export async function handleProductData({
-  response,
-  router,
-  setTitle,
-  setImage,
-  setProduct,
-  setToast,
-  noDataToast,
-  setListingID,
+    response,
+    router,
+    setMeta,
+    setProduct,
+    setToast,
+    noDataToast,
+    setListingID,
 }) {
-  const { data, error } = response
+    const { data, error } = response
 
-  if (error) {
-    router.replace('/')
-    burnToast(
-      setToast,
-      error && error.response && error.response.data ? error.response.data : 'Error',
-    )
-  }
+    if (error) {
+        router.replace('/')
+        burnToast(
+            setToast,
+            error && error.response && error.response.data
+                ? error.response.data
+                : 'Error'
+        )
+    }
 
-  if (!data) {
-    router.replace('/')
-    burnToast(setToast, noDataToast)
-  }
+    if (!data) {
+        router.replace('/')
+        burnToast(setToast, noDataToast)
+    }
 
-  const { name, images, listings } = data
+    const { title, description, covers, listings } = data
 
-  setTitle(name)
-  setImage(images[0])
-  setProduct(data)
-  setListingID(listings[0]['_id'])
+    setMeta({
+        title,
+        description,
+        image: covers[0],
+    })
+    setProduct(data)
+    setListingID(listings[0]['_id'])
 }

@@ -11,8 +11,8 @@ export default function ({ essentials }) {
         useRouter,
         Link,
         Head,
-        large = 'Large',
-        small = 'Small',
+        large,
+        small,
     } = essentials
 
     const theme = useTheme()
