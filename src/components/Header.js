@@ -54,11 +54,6 @@ export default function ({ essentials }) {
     const [drawerVis, setDrawerVis] = useState(false)
     const [placement, setPlacement] = useState('')
 
-    const {
-        buttons,
-        components: { header },
-    } = i18n
-
     useEffect(() => {
         const scrollHandler = () =>
             setSticky(document.documentElement.scrollTop > 54)
@@ -233,11 +228,12 @@ export default function ({ essentials }) {
                         ghost
                         style={{ border: 'none' }}
                         auto
-                        onClick={() =>
+                        onClick={() => {
+                            setDrawerVis(false)
                             themeProvider.setLocalTheme(
                                 theme.type === 'dark' ? 'light' : 'dark'
                             )
-                        }
+                        }}
                     />
                 )}
                 {locales && (
@@ -247,7 +243,10 @@ export default function ({ essentials }) {
                         auto
                         style={{ border: 'none' }}
                         icon={<Globe />}
-                        onClick={() => loopLanguages()}
+                        onClick={() => {
+                            setDrawerVis(false)
+                            loopLanguages()
+                        }}
                     />
                 )}
             </div>
@@ -287,7 +286,7 @@ export default function ({ essentials }) {
                             auto
                             px={locales ? 2 : 1.2}
                         >
-                            {buttons['login'][locale]}
+                            {i18n['buttons']['login'][locale]}
                         </Button>
                     </Link>
                 )}
@@ -320,33 +319,20 @@ export default function ({ essentials }) {
                 width="60%"
             >
                 <Drawer.Content>
-                    {
-                        <ButtonGroup
-                            type="secondary"
-                            mx={0}
-                            mb={2}
-                            width="100%"
-                        >
-                            <Button
-                                disabled={theme.type === 'dark'}
-                                icon={<Moon />}
-                                scale={1.3}
-                                aria-label="Toggle Dark Mode"
-                                onClick={() =>
-                                    themeProvider.setLocalTheme('dark')
-                                }
-                            />
-                            <Button
-                                disabled={theme.type === 'light'}
-                                icon={<Sun />}
-                                scale={1.3}
-                                aria-label="Toggle Light Mode"
-                                onClick={() =>
-                                    themeProvider.setLocalTheme('light')
-                                }
-                            />
-                        </ButtonGroup>
-                    }
+                    <Button
+                        icon={theme.type === 'dark' ? <Sun /> : <Moon />}
+                        aria-label="Toggle Theme"
+                        mb={0.5}
+                        scale={1.5}
+                        width="100%"
+                        type="secondary"
+                        onClick={() => {
+                            setDrawerVis(false)
+                            themeProvider.setLocalTheme(
+                                theme.type === 'dark' ? 'light' : 'dark'
+                            )
+                        }}
+                    />
                     {locales && (
                         <Button
                             type="secondary"
@@ -354,13 +340,17 @@ export default function ({ essentials }) {
                             scale={1.5}
                             mb={0.5}
                             icon={<Globe />}
-                            onClick={() => loopLanguages()}
+                            onClick={() => {
+                                setDrawerVis(false)
+                                loopLanguages()
+                            }}
                         />
                     )}
                     {isAuthenticated ? (
                         <>
                             <Link href="/cart">
                                 <Button
+                                    onClick={() => setDrawerVis(false)}
                                     icon={<ShoppingCart />}
                                     aria-label="Shopping Cart"
                                     type="secondary"
@@ -372,6 +362,7 @@ export default function ({ essentials }) {
                             </Link>
                             <Link href="/user">
                                 <Button
+                                    onClick={() => setDrawerVis(false)}
                                     icon={<User />}
                                     aria-label="Toggle Theme"
                                     type="secondary"
@@ -382,7 +373,10 @@ export default function ({ essentials }) {
                             </Link>
                         </>
                     ) : (
-                        <Link href={config.urls.login}>
+                        <Link
+                            href={config.urls.login}
+                            onClick={() => setDrawerVis(false)}
+                        >
                             <Button
                                 icon={<LogIn />}
                                 aria-label="Login Button"
