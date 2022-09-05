@@ -66,7 +66,7 @@ export default function ({ essentials, children }) {
                         transform: translateY(-35px);
                         box-sizing: border-box;
                     }
-                    .divider > span {
+                    .AccentDivider > span {
                         background-color: ${theme.type === 'dark'
                             ? config.theme.darkBackground
                             : config.theme.lightBackground} !important;
@@ -135,9 +135,6 @@ export default function ({ essentials, children }) {
                         text-align: ${getLocaleAlignment(locale)};
                         margin-top: ${isLocaleRTL(locale) &&
                         '0.6rem !important'};
-                    }
-                    .content {
-                        text-align: justify !important;
                     }
                 `}
             </style>

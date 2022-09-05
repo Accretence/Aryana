@@ -10,7 +10,7 @@ export default memo(({ essentials, meta, children }) => (
     <>
         <Helmet essentials={essentials} meta={meta} />
         <Header essentials={essentials} />
-        <Crown essentials={essentials} />
+        <Crown essentials={essentials} meta={meta} />
         <Wrapper essentials={essentials}>{children}</Wrapper>
         <Footer essentials={essentials} />
     </>
