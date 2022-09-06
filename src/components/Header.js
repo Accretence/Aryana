@@ -270,7 +270,7 @@ export default function ({ essentials }) {
                         </Link>
                     </>
                 ) : (
-                    <Link href={config.urls.login}>
+                    <Link href={config.routes.frontend.login}>
                         <Button
                             icon={<LogIn />}
                             aria-label="Login Button"
@@ -366,7 +366,7 @@ export default function ({ essentials }) {
                             </Link>
                         </>
                     ) : (
-                        <Link href={config.urls.login}>
+                        <Link href={config.routes.frontend.login}>
                             <Button
                                 onClick={() => setDrawerVis(false)}
                                 icon={<LogIn />}

@@ -34,6 +34,11 @@ export default function ({ essentials, children }) {
                     }
 
                     @font-face {
+                        font-family: 'Inter';
+                        src: url('/fonts/Inter/Inter.woff2');
+                    }
+
+                    @font-face {
                         font-family: 'Yekan';
                         src: url('/fonts/Yekan/Yekan.woff');
                     }
@@ -52,7 +57,7 @@ export default function ({ essentials, children }) {
                     dd,
                     dt,
                     dl {
-                        font-family: 'Inter', 'Yekan', 'Segoe UI', 'Roboto' !important;
+                        font-family: 'Inter', 'Yekan' !important;
                     }
 
                     .PageWrapper {

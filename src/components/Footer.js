@@ -18,6 +18,42 @@ export default function ({ essentials }) {
         query,
     } = useRouter()
 
+    const FooterLink = (link) => {
+        if (link.value.includes('http')) {
+            return (
+                <a className="FooterLink" href={link.value} target="_blank">
+                    <Text
+                        px={0}
+                        style={{
+                            fontSize: '0.8rem',
+                            direction: getLocaleDirection(locale),
+                            textAlign: 'end',
+                        }}
+                    >
+                        {link['label'][locale]}
+                    </Text>
+                </a>
+            )
+        } else {
+            return (
+                <Link key={link['label'][locale]} href={link.value}>
+                    <a className="FooterLink">
+                        <Text
+                            px={0}
+                            style={{
+                                fontSize: '0.8rem',
+                                direction: getLocaleDirection(locale),
+                                textAlign: 'end',
+                            }}
+                        >
+                            {link['label'][locale]}
+                        </Text>
+                    </a>
+                </Link>
+            )
+        }
+    }
+
     const Copyright = () => (
         <div
             style={{
@@ -117,61 +153,31 @@ export default function ({ essentials }) {
 
     const DesktopLinks = () => (
         <>
-            <>
-                {footer &&
-                    footer.links.map((category) => {
-                        return (
-                            <Grid
-                                style={{
-                                    display: 'block',
-                                }}
-                                xs={12}
-                                md={4}
-                                key={Math.random()}
-                            >
-                                <Text
-                                    h5
-                                    b
-                                    style={{
-                                        direction: getLocaleDirection(locale),
-                                        textAlign: 'end',
-                                    }}
-                                >
-                                    {category[locale]}
-                                </Text>
-                                {category['links'].map((link) => (
-                                    <Link
-                                        key={link['label'][locale]}
-                                        href={link.value}
-                                    >
-                                        <a className="FooterLink">
-                                            <Text
-                                                px={0}
-                                                style={{
-                                                    fontSize: '0.8rem',
-                                                    direction:
-                                                        getLocaleDirection(
-                                                            locale
-                                                        ),
-                                                    textAlign: 'end',
-                                                }}
-                                            >
-                                                {link['label'][locale]}
-                                            </Text>
-                                        </a>
-                                    </Link>
-                                ))}
-                            </Grid>
-                        )
-                    })}
-            </>
-            <style jsx global>
-                {`
-                    h5 {
-                        white-space: nowrap;
-                    }
-                `}
-            </style>
+            {footer.links.map((category) => {
+                return (
+                    <Grid
+                        style={{
+                            display: 'block',
+                        }}
+                        xs={12}
+                        md={4}
+                        key={Math.random()}
+                    >
+                        <Text
+                            h5
+                            b
+                            style={{
+                                direction: getLocaleDirection(locale),
+                                textAlign: 'end',
+                                whiteSpace: 'nowrap',
+                            }}
+                        >
+                            {category[locale]}
+                        </Text>
+                        {category['links'].map((link) => FooterLink(link))}
+                    </Grid>
+                )
+            })}
         </>
     )
 
@@ -199,28 +205,9 @@ export default function ({ essentials }) {
                                 title={category[locale]}
                                 key={category[locale]}
                             >
-                                {category['links'].map((link) => (
-                                    <Link
-                                        key={link['label'][locale]}
-                                        href={link.value}
-                                    >
-                                        <a className="FooterLink">
-                                            <Text
-                                                px={0}
-                                                style={{
-                                                    direction:
-                                                        getLocaleDirection(
-                                                            locale
-                                                        ),
-                                                    textAlign:
-                                                        'start !important',
-                                                }}
-                                            >
-                                                {link['label'][locale]}
-                                            </Text>
-                                        </a>
-                                    </Link>
-                                ))}
+                                {category['links'].map((link) =>
+                                    FooterLink(link)
+                                )}
                             </Collapse>
                         )
                     })}
