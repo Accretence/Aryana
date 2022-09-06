@@ -1,12 +1,5 @@
 import { useEffect, useState } from 'react'
-import {
-    Tabs,
-    Text,
-    useTheme,
-    Drawer,
-    ButtonGroup,
-    Button,
-} from '@geist-ui/core'
+import { Tabs, Text, useTheme, Drawer, Button } from '@geist-ui/core'
 import {
     Globe,
     Sun,
@@ -373,11 +366,9 @@ export default function ({ essentials }) {
                             </Link>
                         </>
                     ) : (
-                        <Link
-                            href={config.urls.login}
-                            onClick={() => setDrawerVis(false)}
-                        >
+                        <Link href={config.urls.login}>
                             <Button
+                                onClick={() => setDrawerVis(false)}
                                 icon={<LogIn />}
                                 aria-label="Login Button"
                                 type="secondary"
@@ -389,13 +380,6 @@ export default function ({ essentials }) {
                     )}
                 </Drawer.Content>
             </Drawer>
-            <style jsx global>
-                {`
-                    .btn-group > button {
-                        width: 100% !important;
-                    }
-                `}
-            </style>
         </>
     )
 

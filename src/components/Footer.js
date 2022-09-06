@@ -22,15 +22,14 @@ export default function ({ essentials }) {
         <div
             style={{
                 display: 'block',
-                justifyItems: 'right',
             }}
         >
             <Text
                 h4
                 my={0}
                 style={{
-                    textAlign: 'left',
-                    direction: isLocaleRTL(locale) ? 'rtl' : 'ltr',
+                    direction: getLocaleDirection(locale),
+                    textAlign: 'start !important',
                 }}
             >
                 {footer['title'][locale].toUpperCase()}
@@ -39,8 +38,8 @@ export default function ({ essentials }) {
                 mt={0}
                 style={{
                     fontSize: '0.7rem',
-                    textAlign: 'right',
-                    direction: isLocaleRTL(locale) ? 'rtl' : 'ltr',
+                    direction: getLocaleDirection(locale),
+                    textAlign: 'start !important',
                 }}
                 type="secondary"
             >
@@ -205,7 +204,7 @@ export default function ({ essentials }) {
                                         key={link['label'][locale]}
                                         href={link.value}
                                     >
-                                        <a>
+                                        <a className="FooterLink">
                                             <Text
                                                 px={0}
                                                 style={{
@@ -213,11 +212,8 @@ export default function ({ essentials }) {
                                                         getLocaleDirection(
                                                             locale
                                                         ),
-                                                    textAlign: isLocaleRTL(
-                                                        locale
-                                                    )
-                                                        ? 'end'
-                                                        : 'start',
+                                                    textAlign:
+                                                        'start !important',
                                                 }}
                                             >
                                                 {link['label'][locale]}
@@ -283,7 +279,16 @@ export default function ({ essentials }) {
                                     Link={Link}
                                 />
                             </Grid>
-                            <Grid xs={24} md={0}>
+                            <Grid
+                                xs={24}
+                                md={0}
+                                mx={0.4}
+                                style={{
+                                    justifyContent: isLocaleRTL(locale)
+                                        ? 'end'
+                                        : 'start',
+                                }}
+                            >
                                 <Copyright />
                             </Grid>
                         </Grid.Container>

@@ -67,9 +67,7 @@ export default function ({ essentials, children }) {
                         box-sizing: border-box;
                     }
                     .AccentDivider > span {
-                        background-color: ${theme.type === 'dark'
-                            ? config.theme.darkBackground
-                            : config.theme.lightBackground} !important;
+                        background-color: ${theme.palette.accents_1} !important;
                         color: ${theme.palette.accents_4} !important;
                     }
                     .clear-icon > svg {
