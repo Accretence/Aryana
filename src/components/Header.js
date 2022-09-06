@@ -14,7 +14,7 @@ import {
 import { isLocaleRTL } from '../helpers/index.js'
 import { useWindowSize } from '../hooks/index.js'
 
-export default function ({ essentials }) {
+export default function Header({ essentials }) {
     const { config, i18n, useThemeProvider, useAuth, useRouter, Link, Head } =
         essentials
 
@@ -279,7 +279,7 @@ export default function ({ essentials }) {
                             auto
                             px={locales ? 2 : 1.2}
                         >
-                            {i18n['buttons']['login'][locale]}
+                            <b>{i18n['buttons']['login'][locale]}</b>
                         </Button>
                     </Link>
                 )}

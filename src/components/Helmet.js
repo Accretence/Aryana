@@ -1,4 +1,4 @@
-export default function ({ essentials, meta }) {
+export default function Helmet({ essentials, meta }) {
     const { config, i18n, useThemeProvider, useAuth, useRouter, Link, Head } =
         essentials
 

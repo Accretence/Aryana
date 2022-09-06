@@ -2,7 +2,7 @@ import { Text, Grid, useTheme, Collapse } from '@geist-ui/core'
 
 import { isLocaleRTL, getLocaleDirection } from '../helpers/index.js'
 
-export default function ({ essentials }) {
+export default function Footer({ essentials }) {
     const { config, i18n, useThemeProvider, useAuth, useRouter, Link, Head } =
         essentials
 
@@ -21,7 +21,12 @@ export default function ({ essentials }) {
     const FooterLink = (link) => {
         if (link.value.includes('http')) {
             return (
-                <a className="FooterLink" href={link.value} target="_blank">
+                <a
+                    key={link.value}
+                    className="FooterLink"
+                    href={link.value}
+                    target="_blank"
+                >
                     <Text
                         px={0}
                         style={{
@@ -36,7 +41,7 @@ export default function ({ essentials }) {
             )
         } else {
             return (
-                <Link key={link['label'][locale]} href={link.value}>
+                <Link key={link.value} href={link.value}>
                     <a className="FooterLink">
                         <Text
                             px={0}

@@ -6,7 +6,7 @@ import {
     getLocaleAlignment,
 } from '../helpers/index.js'
 
-export default function ({ essentials, children }) {
+export default function Wrapper({ essentials, children }) {
     const { config, i18n, useThemeProvider, useAuth, useRouter, Link, Head } =
         essentials
 
@@ -87,7 +87,6 @@ export default function ({ essentials, children }) {
                     }
                     .Peculiar {
                         color: ${theme.palette.accents_6}!important;
-                        font-size: 0.75rem;
                     }
                     .Peculiar:hover {
                         color: ${theme.palette.code}!important;

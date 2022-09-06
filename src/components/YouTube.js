@@ -1,4 +1,4 @@
-export default function ({ embedId }) {
+export default function YouTube({ embedId }) {
     return (
         <iframe
             width="100%"
