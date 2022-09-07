@@ -1,5 +1,13 @@
 import { useEffect, useState } from 'react'
-import { Tabs, Text, useTheme, Drawer, Button } from '@geist-ui/core'
+import {
+    Tabs,
+    Divider,
+    Text,
+    useTheme,
+    Drawer,
+    Button,
+    useToasts,
+} from '@geist-ui/core'
 import {
     Globe,
     Sun,
@@ -9,16 +17,27 @@ import {
     ShoppingCart,
     Menu,
     Search,
+    LogOut,
 } from '@geist-ui/icons'
 
 import { isLocaleRTL } from '../helpers/index.js'
 import { useWindowSize } from '../hooks/index.js'
+import { logoutHandler } from '../handlers/AuthenticationHandlers.js'
 
 export default function Header({ essentials }) {
-    const { config, i18n, useThemeProvider, useAuth, useRouter, Link, Head } =
-        essentials
+    const {
+        config,
+        i18n,
+        useThemeProvider,
+        useAuth,
+        useRouter,
+        Link,
+        Head,
+        axios,
+    } = essentials
 
     const theme = useTheme()
+    const { setToast } = useToasts()
     const themeProvider = useThemeProvider()
     const { width, height } = useWindowSize()
     const { isAuthenticated, setLocalAuthentication } = useAuth()
@@ -59,6 +78,21 @@ export default function Header({ essentials }) {
     function drawDrawer() {
         setPlacement('left')
         setDrawerVis(true)
+    }
+
+    async function onLogout() {
+        const response = await axios.post(config.routes.backend.logout)
+
+        logoutHandler({
+            response,
+            setToast,
+            setLocalAuthentication,
+            router,
+            toast: i18n['toasts']['logout'][locale],
+            redirect_uri: config.routes.frontend.root,
+        })
+
+        setDrawerVis(false)
     }
 
     const Title = () => (
@@ -364,6 +398,18 @@ export default function Header({ essentials }) {
                                     style={{ border: 'none' }}
                                 />
                             </Link>
+                            <Divider my={2} />
+                            <Button
+                                onClick={onLogout}
+                                icon={<LogOut />}
+                                aria-label="Logout"
+                                type="secondary"
+                                width="100%"
+                                scale={1.5}
+                                style={{
+                                    border: 'none',
+                                }}
+                            />
                         </>
                     ) : (
                         <Link href={config.routes.frontend.login}>
