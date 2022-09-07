@@ -1,40 +1,49 @@
 import { burnToast } from '../helpers/index.js'
 
 export async function handleCartData({
-  response,
-  router,
-  setCart,
-  setToast,
-  noDataToast,
+    response,
+    router,
+    setCart,
+    setToast,
+    noDataToast,
 }) {
-  const { data, error } = response
+    const { data, error } = response
 
-  if (error) {
-    router.replace('/')
-    burnToast(
-      setToast,
-      error && error.response && error.response.data ? error.response.data : 'Error',
-    )
-  }
+    if (error) {
+        router.replace('/')
+        burnToast(
+            setToast,
+            error && error.response && error.response.data
+                ? error.response.data
+                : 'Error'
+        )
+    }
 
-  if (!data || !data.cart) {
-    router.replace('/')
-    burnToast(setToast, noDataToast)
-  }
+    if (!data || !data.cart) {
+        router.replace('/')
+        burnToast(setToast, noDataToast)
+    }
 
-  setCart(data.cart)
+    setCart(data.cart)
 }
 
-export async function handleAddToCartData({ response, router, setToast, toast }) {
-  const { error } = response
+export async function handleAddToCartData({
+    response,
+    router,
+    setToast,
+    toast,
+}) {
+    const { error } = response
 
-  if (error) {
-    router.replace('/')
-    burnToast(
-      setToast,
-      error && error.response && error.response.data ? error.response.data : 'Error',
-    )
-  }
+    if (error) {
+        router.replace('/')
+        burnToast(
+            setToast,
+            error && error.response && error.response.data
+                ? error.response.data
+                : 'Error'
+        )
+    }
 
-  burnToast(setToast, toast)
+    burnToast(setToast, toast)
 }

@@ -3,7 +3,7 @@ import { burnToast } from '../helpers/index.js'
 export async function handleProductsData({
     response,
     router,
-    setPages,
+    setTotalPages,
     setProducts,
     setToast,
     noDataToast,
@@ -27,7 +27,7 @@ export async function handleProductsData({
         burnToast(setToast, noDataToast)
     }
 
-    setPages(pages)
+    setTotalPages(pages)
     setProducts(products)
 }
 
