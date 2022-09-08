@@ -7,6 +7,7 @@ import {
     Drawer,
     Button,
     useToasts,
+    Grid,
 } from '@geist-ui/core'
 import {
     Globe,
@@ -152,14 +153,14 @@ export default function Header({ essentials }) {
                                             />
                                         )
                                     })}
-                                    {submenu.protected.map((tab) => (
-                                        <Tabs.Item
-                                            key={tab['label'][locale]}
-                                            label={tab['label'][locale]}
-                                            value={tab.value}
-                                            disabled={!isAuthenticated}
-                                        />
-                                    ))}
+                                    {/* {isAuthenticated &&
+                                        submenu.protected.map((tab) => (
+                                            <Tabs.Item
+                                                key={tab['label'][locale]}
+                                                label={tab['label'][locale]}
+                                                value={tab.value}
+                                            />
+                                        ))} */}
                                 </Tabs>
                             </div>
                         </div>
@@ -344,72 +345,102 @@ export default function Header({ essentials }) {
                 onClose={() => setDrawerVis(false)}
                 placement={placement}
                 width="60%"
+                style={{
+                    backgroundColor:
+                        theme.type == 'light'
+                            ? config.theme.lightBackground
+                            : config.theme.darkBackground,
+                }}
             >
                 <Drawer.Content>
-                    <Button
-                        icon={theme.type === 'dark' ? <Sun /> : <Moon />}
-                        aria-label="Toggle Theme"
-                        mb={0.5}
-                        scale={1.5}
-                        width="100%"
-                        type="secondary"
-                        onClick={() => {
-                            setDrawerVis(false)
-                            themeProvider.setLocalTheme(
-                                theme.type === 'dark' ? 'light' : 'dark'
-                            )
-                        }}
-                    />
-                    {locales && (
-                        <Button
-                            type="secondary"
-                            width="100%"
-                            scale={1.5}
-                            mb={0.5}
-                            icon={<Globe />}
-                            onClick={() => {
-                                setDrawerVis(false)
-                                loopLanguages()
-                            }}
-                        />
-                    )}
+                    <Grid.Container gap={1}>
+                        <Grid xs={locales ? 12 : 24}>
+                            <Button
+                                icon={
+                                    theme.type === 'dark' ? <Sun /> : <Moon />
+                                }
+                                aria-label="Toggle Theme"
+                                scale={1.5}
+                                width="100%"
+                                type="secondary"
+                                style={{ border: 'none' }}
+                                ghost
+                                onClick={() => {
+                                    setDrawerVis(false)
+                                    themeProvider.setLocalTheme(
+                                        theme.type === 'dark' ? 'light' : 'dark'
+                                    )
+                                }}
+                            />
+                        </Grid>
+                        {locales && (
+                            <Grid xs={12}>
+                                <Button
+                                    type="secondary"
+                                    style={{ border: 'none' }}
+                                    ghost
+                                    width="100%"
+                                    scale={1.5}
+                                    icon={<Globe />}
+                                    onClick={() => {
+                                        setDrawerVis(false)
+                                        loopLanguages()
+                                    }}
+                                />
+                            </Grid>
+                        )}
+                    </Grid.Container>
+                    <Divider my={2} />
                     {isAuthenticated ? (
                         <>
                             <Link href="/cart">
                                 <Button
                                     onClick={() => setDrawerVis(false)}
                                     icon={<ShoppingCart />}
-                                    aria-label="Shopping Cart"
+                                    aria-label="Shopping Cart Page"
                                     type="secondary"
+                                    ghost
+                                    style={{ border: 'none' }}
                                     width="100%"
                                     scale={1.5}
                                     mb={0.5}
-                                    style={{ border: 'none' }}
-                                />
+                                >
+                                    <Text small>
+                                        {i18n['buttons']['cart'][locale]}
+                                    </Text>
+                                </Button>
                             </Link>
                             <Link href="/user">
                                 <Button
                                     onClick={() => setDrawerVis(false)}
                                     icon={<User />}
-                                    aria-label="Toggle Theme"
+                                    aria-label="User Page"
                                     type="secondary"
+                                    style={{ border: 'none' }}
+                                    ghost
                                     width="100%"
                                     scale={1.5}
-                                    style={{ border: 'none' }}
-                                />
+                                >
+                                    <Text small>
+                                        {i18n['buttons']['user'][locale]}
+                                    </Text>
+                                </Button>
                             </Link>
                             <Divider my={2} />
                             <Button
                                 onClick={onLogout}
                                 icon={<LogOut />}
-                                aria-label="Logout"
+                                aria-label="Logout Button"
                                 type="secondary"
+                                style={{ border: 'none' }}
+                                ghost
                                 width="100%"
                                 scale={1.5}
-                                style={{
-                                    border: 'none',
-                                }}
-                            />
+                            >
+                                <Text small>
+                                    {i18n['buttons']['logout'][locale]}
+                                </Text>
+                            </Button>
                         </>
                     ) : (
                         <Link href={config.routes.frontend.login}>
@@ -419,9 +450,14 @@ export default function Header({ essentials }) {
                                 aria-label="Login Button"
                                 type="secondary"
                                 style={{ border: 'none' }}
+                                ghost
                                 width="100%"
                                 scale={1.5}
-                            />
+                            >
+                                <Text small>
+                                    {i18n['buttons']['login'][locale]}
+                                </Text>
+                            </Button>
                         </Link>
                     )}
                 </Drawer.Content>

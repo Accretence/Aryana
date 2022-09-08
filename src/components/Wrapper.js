@@ -57,7 +57,10 @@ export default function Wrapper({ essentials, children }) {
                     dd,
                     dt,
                     dl {
-                        font-family: 'Inter', 'Yekan' !important;
+                        font-family: 'Inter', 'Yekan', -apple-system,
+                            BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+                            'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+                            'Helvetica Neue', sans-serif !important;
                     }
 
                     .PageWrapper {
@@ -137,6 +140,9 @@ export default function Wrapper({ essentials, children }) {
                         text-align: ${getLocaleAlignment(locale)};
                         margin-top: ${isLocaleRTL(locale) &&
                         '0.6rem !important'};
+                    }
+                    tbody > tr:last-child > td {
+                        border-bottom: none !important;
                     }
                 `}
             </style>
