@@ -21,9 +21,8 @@ import {
     LogOut,
 } from '@geist-ui/icons'
 
-import { isLocaleRTL } from '../helpers/index.js'
+import { fetchHandler, isLocaleRTL } from '../helpers/index.js'
 import { useWindowSize } from '../hooks/index.js'
-import { logoutHandler } from '../handlers/AuthenticationHandlers.js'
 
 export default function Header({ essentials }) {
     const {
@@ -64,6 +63,7 @@ export default function Header({ essentials }) {
     }
 
     const [sticky, setSticky] = useState(false)
+    const [loading, setLoading] = useState(false)
     const [drawerVis, setDrawerVis] = useState(false)
     const [placement, setPlacement] = useState('')
 
@@ -84,13 +84,14 @@ export default function Header({ essentials }) {
     async function onLogout() {
         const response = await axios.post(config.routes.backend.logout)
 
-        logoutHandler({
-            response,
-            setToast,
-            setLocalAuthentication,
+        fetchHandler({
             router,
-            toast: i18n['toasts']['logout'][locale],
-            redirect_uri: config.routes.frontend.root,
+            response,
+            setLoading,
+            setToast,
+            setState: setLocalAuthentication,
+            success_toast: i18n['toasts']['logout'][locale],
+            success_redirect_uri: config.routes.frontend.root,
         })
 
         setDrawerVis(false)
@@ -430,6 +431,7 @@ export default function Header({ essentials }) {
                             <Button
                                 onClick={onLogout}
                                 icon={<LogOut />}
+                                loading={loading}
                                 aria-label="Logout Button"
                                 type="secondary"
                                 style={{ border: 'none' }}

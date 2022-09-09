@@ -6,10 +6,7 @@ export default function Crown({ essentials, meta }) {
     const { config, i18n, useThemeProvider, useAuth, useRouter, Link, Head } =
         essentials
 
-    const { large, small } = meta
-
     const theme = useTheme()
-    const smallComponent = small
 
     const {
         locale = config.defaultLocale,
@@ -19,49 +16,50 @@ export default function Crown({ essentials, meta }) {
         query,
     } = useRouter()
 
-    return (
-        <>
-            <div className="Banner">
-                <div style={{ marginTop: '1rem', marginBottom: '3rem' }}>
-                    {large && small && (
-                        <>
-                            <Text
-                                h3
-                                mb={0}
-                                pb={0}
-                                style={{
-                                    direction: getLocaleDirection(locale),
-                                }}
-                            >
-                                {large.toUpperCase()}
-                            </Text>
-                            <Text
-                                mt={0.2}
-                                type="secondary"
-                                style={{
-                                    fontSize: '0.85rem',
-                                    direction: getLocaleDirection(locale),
-                                }}
-                            >
-                                {smallComponent}
-                            </Text>
-                        </>
-                    )}
+    if (meta)
+        return (
+            <>
+                <div className="Banner">
+                    <div style={{ marginTop: '1rem', marginBottom: '3rem' }}>
+                        {meta.large && meta.small && (
+                            <>
+                                <Text
+                                    h3
+                                    mb={0}
+                                    pb={0}
+                                    style={{
+                                        direction: getLocaleDirection(locale),
+                                    }}
+                                >
+                                    {meta.large.toUpperCase()}
+                                </Text>
+                                <Text
+                                    mt={0.2}
+                                    type="secondary"
+                                    style={{
+                                        fontSize: '0.85rem',
+                                        direction: getLocaleDirection(locale),
+                                    }}
+                                >
+                                    {meta.small}
+                                </Text>
+                            </>
+                        )}
+                    </div>
                 </div>
-            </div>
-            <Spacer />
-            <style jsx global>
-                {`
-                    .Banner {
-                        width: ${config.theme.width};
-                        max-width: 100%;
-                        margin: 0 auto;
-                        padding: 0 ${theme.layout.pageMargin};
-                        box-sizing: border-box;
-                        text-align: justify !important;
-                    }
-                `}
-            </style>
-        </>
-    )
+                <Spacer />
+                <style jsx global>
+                    {`
+                        .Banner {
+                            width: ${config.theme.width};
+                            max-width: 100%;
+                            margin: 0 auto;
+                            padding: 0 ${theme.layout.pageMargin};
+                            box-sizing: border-box;
+                            text-align: justify !important;
+                        }
+                    `}
+                </style>
+            </>
+        )
 }

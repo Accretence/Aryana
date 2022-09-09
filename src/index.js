@@ -1,21 +1,4 @@
 import {
-    loginHandler,
-    registerHandler,
-    verifyHandler,
-    logoutHandler,
-    unsubscribeHandler,
-    subscribeHandler,
-    forgotHandler,
-    resetHandler,
-    handleCartData,
-    handleAddToCartData,
-    handleOrderData,
-    handleProductData,
-    handleProductsData,
-    handleUserData,
-} from './handlers/index.js'
-
-import {
     burnToast,
     getGoogleURL,
     isEmail,
@@ -23,6 +6,7 @@ import {
     isLocaleRTL,
     getLocaleDirection,
     getPersianNumber,
+    fetchHandler,
 } from './helpers/index.js'
 
 import {
@@ -40,20 +24,7 @@ import { useTraceUpdate, useWindowSize } from './hooks/index.js'
 import { GoogleIcon, TomanIcon } from './icons/index.js'
 
 export {
-    loginHandler,
-    registerHandler,
-    verifyHandler,
-    logoutHandler,
-    unsubscribeHandler,
-    subscribeHandler,
-    forgotHandler,
-    resetHandler,
-    handleCartData,
-    handleAddToCartData,
-    handleOrderData,
-    handleProductData,
-    handleProductsData,
-    handleUserData,
+    fetchHandler,
     burnToast,
     getGoogleURL,
     isEmail,
