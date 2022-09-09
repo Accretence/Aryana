@@ -19,6 +19,7 @@ import {
     Menu,
     Search,
     LogOut,
+    Mail,
 } from '@geist-ui/icons'
 
 import { fetchHandler, isLocaleRTL } from '../helpers/index.js'
@@ -315,7 +316,7 @@ export default function Header({ essentials }) {
                             auto
                             px={locales ? 2 : 1.2}
                         >
-                            <b>{i18n['buttons']['login'][locale]}</b>
+                            {i18n['buttons']['login'][locale]}
                         </Button>
                     </Link>
                 )}
@@ -392,6 +393,23 @@ export default function Header({ essentials }) {
                         )}
                     </Grid.Container>
                     <Divider my={2} />
+                    <Link href="/contact">
+                        <Button
+                            onClick={() => setDrawerVis(false)}
+                            icon={<Mail />}
+                            aria-label="Contact Page"
+                            type="secondary"
+                            ghost
+                            style={{ border: 'none' }}
+                            width="100%"
+                            scale={1.5}
+                            mb={0.5}
+                        >
+                            <Text small>
+                                {i18n['buttons']['contact'][locale]}
+                            </Text>
+                        </Button>
+                    </Link>
                     {isAuthenticated ? (
                         <>
                             <Link href="/cart">

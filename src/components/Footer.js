@@ -1,12 +1,14 @@
 import { Text, Grid, useTheme, Collapse } from '@geist-ui/core'
 
 import { isLocaleRTL, getLocaleDirection } from '../helpers/index.js'
+import useWindowSize from '../hooks/useWindowSize.js'
 
 export default function Footer({ essentials }) {
     const { config, i18n, useThemeProvider, useAuth, useRouter, Link, Head } =
         essentials
 
     const theme = useTheme()
+    const { width, height } = useWindowSize()
 
     const footer = i18n['components']['footer']
 
@@ -32,7 +34,7 @@ export default function Footer({ essentials }) {
                         style={{
                             fontSize: '0.8rem',
                             direction: getLocaleDirection(locale),
-                            textAlign: 'end',
+                            textAlign: width > 650 ? 'end' : 'start',
                         }}
                     >
                         {link['label'][locale]}
@@ -48,7 +50,7 @@ export default function Footer({ essentials }) {
                             style={{
                                 fontSize: '0.8rem',
                                 direction: getLocaleDirection(locale),
-                                textAlign: 'end',
+                                textAlign: width > 650 ? 'end' : 'start',
                             }}
                         >
                             {link['label'][locale]}

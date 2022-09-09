@@ -101,6 +101,12 @@ export default function Wrapper({ essentials, children }) {
                     .FooterLink:hover {
                         color: ${theme.palette.code} !important;
                     }
+                    .Bread {
+                        display: flex;
+                        justify-content: start;
+                        text-align: ${getLocaleAlignment(locale)};
+                        direction: ${getLocaleDirection(locale)};
+                    }
                     .Bread a {
                         color: ${theme.palette.accents_4} !important;
                         transition: color 0.3s ease;
@@ -112,7 +118,7 @@ export default function Wrapper({ essentials, children }) {
                         white-space: nowrap;
                     }
                     table {
-                        overflow: 'scroll' !important;
+                        overflow: scroll !important;
                     }
                     .avanti > .item {
                         justify-content: ${isLocaleRTL(locale)
@@ -140,6 +146,12 @@ export default function Wrapper({ essentials, children }) {
                         text-align: ${getLocaleAlignment(locale)};
                         margin-top: ${isLocaleRTL(locale) &&
                         '0.6rem !important'};
+                    }
+                    .collapse > .container > .content {
+                        display: flex;
+                        justify-content: start;
+                        direction: ${getLocaleDirection(locale)};
+                        text-align: start;
                     }
                     tbody > tr:last-child > td {
                         border-bottom: none !important;
