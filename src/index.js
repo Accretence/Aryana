@@ -22,6 +22,7 @@ import {
     getLocaleAlignment,
     isLocaleRTL,
     getLocaleDirection,
+    getPersianNumber,
 } from './helpers/index.js'
 
 import {
@@ -36,7 +37,7 @@ import {
 
 import { useTraceUpdate, useWindowSize } from './hooks/index.js'
 
-import { GoogleIcon } from './icons/index.js'
+import { GoogleIcon, TomanIcon } from './icons/index.js'
 
 export {
     loginHandler,
@@ -67,6 +68,8 @@ export {
     Wrapper,
     YouTube,
     GoogleIcon,
+    TomanIcon,
     useWindowSize,
     useTraceUpdate,
+    getPersianNumber,
 }

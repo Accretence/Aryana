@@ -1,6 +1,6 @@
 {
     "name": "aryana",
-    "version": "0.3.1",
+    "version": "0.3.2",
     "author": "@accretence",
     "description": "Singular Component Next.js UI Layout built upon geist-ui.",
     "license": "MIT",
@@ -18,15 +18,12 @@
     },
     "homepage": "https://github.com/Accretence/Aryana#readme",
     "main": "dist/index.js",
-    "module": "dist/index.es.js",
     "files": [
         "/dist"
     ],
     "scripts": {
         "update": "npx npm-check-updates -u",
-        "build:clear": "rm -rf ./dist",
-        "build:rollup": "rollup -c",
-        "build": "npm run build:clear && npm run build:rollup"
+        "build": "rm -rf ./dist && rollup -c"
     },
     "devDependencies": {
         "@babel/preset-react": "^7.18.6",

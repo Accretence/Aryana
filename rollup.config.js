@@ -16,11 +16,11 @@ export default [
                 exports: 'named',
                 sourcemap: false,
             },
-            {
-                file: 'dist/index.es.js',
-                format: 'es',
-                exports: 'named',
-            },
+            // {
+            //     file: 'dist/index.es.js',
+            //     format: 'es',
+            //     exports: 'named',
+            // },
         ],
         plugins: [
             replace({
