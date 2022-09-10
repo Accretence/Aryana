@@ -1,4 +1,4 @@
-import { useTheme } from '@geist-ui/core'
+import { Spacer, useTheme } from '@geist-ui/core'
 
 import {
     isLocaleRTL,
@@ -21,8 +21,10 @@ export default function Wrapper({ essentials, children }) {
 
     return (
         <>
-            <div className="PageWrapper">
-                <div className="PageContent">{children}</div>
+            <div className="PageContent">
+                <Spacer />
+                {children}
+                <Spacer />
             </div>
             <style jsx global>
                 {`
@@ -63,15 +65,11 @@ export default function Wrapper({ essentials, children }) {
                             'Helvetica Neue', sans-serif !important;
                     }
 
-                    .PageWrapper {
-                        transform: translateY(-5px);
-                    }
                     .PageContent {
                         width: ${config.theme.width};
                         max-width: 100%;
                         margin: 0 auto;
                         padding: 0 ${theme.layout.pageMargin};
-                        transform: translateY(-35px);
                         box-sizing: border-box;
                     }
                     .AccentDivider > span {

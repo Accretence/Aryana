@@ -10,7 +10,6 @@ import {
 } from './helpers/index.js'
 
 import {
-    Crown,
     Footer,
     Header,
     Helmet,
@@ -31,7 +30,6 @@ export {
     getLocaleAlignment,
     isLocaleRTL,
     getLocaleDirection,
-    Crown,
     Footer,
     Header,
     Helmet,

@@ -26,16 +26,8 @@ import { fetchHandler, isLocaleRTL } from '../helpers/index.js'
 import { useWindowSize } from '../hooks/index.js'
 
 export default function Header({ essentials }) {
-    const {
-        config,
-        i18n,
-        useThemeProvider,
-        useAuth,
-        useRouter,
-        Link,
-        Head,
-        axios,
-    } = essentials
+    const { config, i18n, useThemeProvider, useAuth, useRouter, Link } =
+        essentials
 
     const theme = useTheme()
     const { setToast } = useToasts()
@@ -83,7 +75,7 @@ export default function Header({ essentials }) {
     }
 
     async function onLogout() {
-        const response = await axios.post(config.routes.backend.logout)
+        const response = await fetch(config.routes.backend.logout)
 
         fetchHandler({
             router,
