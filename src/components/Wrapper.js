@@ -22,9 +22,9 @@ export default function Wrapper({ essentials, children }) {
     return (
         <>
             <div className="PageContent">
-                <Spacer />
+                <Spacer h={2} />
                 {children}
-                <Spacer />
+                <Spacer h={2} />
             </div>
             <style jsx global>
                 {`
@@ -129,9 +129,6 @@ export default function Wrapper({ essentials, children }) {
                     }
 
                     .collapse > .view > .title > h3 {
-                        position: ${isLocaleRTL(locale) &&
-                        'absolute !important'};
-                        right: ${isLocaleRTL(locale) && '2.5rem !important'};
                         direction: ${getLocaleDirection(locale)};
                         text-align: ${getLocaleAlignment(locale)};
                     }

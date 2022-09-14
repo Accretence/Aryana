@@ -45,10 +45,6 @@ export default function Header({ essentials }) {
         query,
     } = router
 
-    function getPosition(string, subString, index) {
-        return string.split(subString, index).join(subString).length
-    }
-
     function loopLanguages() {
         router.push({ pathname, query }, asPath, {
             locale: locales[(locales.indexOf(locale) + 1) % locales.length],
